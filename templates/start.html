@@ -37,7 +37,7 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-brand" href="/">
-            <span><img src="{{ url_for('static', filename='images/logonav.png') }}" alt="Logo" style="height: auto; width: auto; max-height: 45px; max-width: 250px;"></span>
+            <span><img src="{{ url_for('static', filename='images/pytdc_logo.png') }}" alt="Logo" style="height: auto; width: auto; max-height: 45px; max-width: 250px;"></span>
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                 <span aria-hidden="true"></span>
@@ -121,21 +121,12 @@
                     
                 
                     
-                    <a href="https://huggingface.co/tdc" class="navbar-item ">HF Models</a>
+                    <a href="https://huggingface.co/apliko" class="navbar-item ">HF Models</a>
                     
                 
-                    
-                    <a href="/news" class="navbar-item ">News</a>
-                    
-                
-                    
-                    <a href="/team" class="navbar-item ">Team</a>
-                    
-                
-                <a href="https://zitniklab.hms.harvard.edu/publications/papers/TDC-neurips21-main.pdf" class="navbar-item">NeurIPS Paper</a>
-                <a href="https://www.nature.com/articles/s41589-022-01131-2" class="navbar-item">Nat Chem Bio Paper</a>
-                <a href="https://tdc.readthedocs.io" class="navbar-item">Docs</a>
-                <a href="https://github.com/mims-harvard/TDC" class="navbar-item">GitHub</a>
+                <a href="https://openreview.net/forum?id=HV8vZDDoYc" class="navbar-item">ICML Paper</a>
+                <a href="https://openreview.net/forum?id=kL8dlYp6IM" class="navbar-item">NeurIPS Paper</a>
+                <a href="https://github.com/apliko-xyz/PyTDC" class="navbar-item">GitHub</a>
                 
             </div>
 
@@ -158,44 +149,6 @@
                     
 <div class="content">
     <h1 id="introduction">Introduction</h1>
-
-<p class="is-size-5"> 
-Developing therapeutics to cure diseases and improve human health is an overarching goal of biomedical research. The Commons supports the development of artificial intelligence (AI) and machine learning (ML) methods, with a strong bent towards developing the foundations of which ML methods are most suitable for drug discovery applications and why.
-</p>
-
-<p class="is-size-5">
-The Commons provides access to ML capability across therapeutic modalities and stages of discovery. It contains solvable ML tasks, ML-ready datasets, and curated benchmarks and leadearboards, all accessible via a Python package. Datasets in the Commons cover a wide range of therapeutic products (e.g., small molecules, biologics, gene editing therapies) across the entire discovery and development pipeline (e.g., target identification, hit discovery, lead optimization, manufacturing). 
-</p>
-
-<div class="column is-8 is-offset-2">
-    <img src="{{ url_for('static', filename='images/tdc_triangle.png') }}" alt="Overview of TDC" class="img-responsive" />
-</div>
-
-<p class="is-size-5">
-All datasets are ML-ready, meaning that input features are processed into an accessible format, such that scientists can use them directly as input to ML methods. TDC provides numerous functions for model evaluation, meaningful data splits, data processors, and oracles for molecule generation. All features of TDC are designed to easily integrate into any ML project, supporting the entire lifecycle of the project. 
-</p>
-
-<p class="is-size-5">
-The Commons curates benchmarks for key therapeutic tasks. Every benchmark has a carefully designed ML task, ML-ready dataset, a public leaderboard, and a set of performance metrics to support model evaluation, providing effective indicators of the performance of ML methods in real-world scenarios.
-</p>
-
-<div class="container">
-            <div class="columns is-vcentered">
-                <div class="column is-12 is-size-5">
-                    <div class="box has-background-info has-text-white">
-                        <b>Enable algorithmic and scientific advance in therapeutic science</b><br />
-                        The Commons lies at the nexus between artificial intelligence and drug discovery. Biologists and biochemists can
-                        pose ML tasks and identify relevant datasets that are carefully processed and integrated into Commons and formulated as scientifically valid ML tasks. ML scientists can rapidly obtain these tasks and develop ML methods to advance the therapeutic task past the state of the art and open up new opportunities.
-                    </div>
-                </div>
-            </div>
-</div>
-
-<p><img src="{{ url_for('static', filename='images/tdc_vision.png') }}" alt="Vision for TDC" class="img-responsive" /></p>
-
-<div class="column is-12">
-    <hr />
-</div>
 
 <h2 id="tiered-design-of-therapeutics-data-commons-problem--ml-task--dataset">Tiered Design of Therapeutics Data Commons: “Problem – ML Task – Dataset”</h2>
 
@@ -243,9 +196,9 @@ The Commons curates benchmarks for key therapeutic tasks. Every benchmark has a 
 
 <h2 id="installation">Installation</h2>
 
-<p class="is-size-5"> To install the TDC Python package, use the following: </p>
+<p class="is-size-5"> To install the PyTDC Python package, use the following: </p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>PyTDC
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>pytdc-nextml
 </code></pre></div></div>
 
 <p class="is-size-5"> The installation of the package is hassle-free with minimum dependency on external packages. </p>
@@ -294,40 +247,11 @@ processing functions, TDC implements wrappers and useful data helpers for them. 
     <hr />
 </div>
 
-<h2 id="public-leaderboards-and-benchmarks">Public Leaderboards and Benchmarks</h2>
-
-<p class="is-size-5">
-TDC provides leaderboards for systematic model evaluation and comparison. Every dataset
-in TDC can be thought of as a <b>benchmark</b>. For a model to be useful for a specific therapeutic question,
-it needs to consistently perform well across multiple datasets and tasks. For this reason, we group
-individual benchmarks into meaningful groups centered around therapeutic questions, which we refer to as <b>benchmark groups</b>. Dataset splits and evaluation metrics reflect real-world difficulty of therapeutic problems.
-</p>
 
 <div class="column is-12">
     <hr />
 </div>
 
-<!--
-## Cite Therapeutics Data Commons
-
-<p class="is-size-5"> If you use TDC in your work, consider citing our <b><a href="https://openreview.net/pdf?id=8nvgnORnoWr">NeurIPS 2021 Datasets and Benchmarks paper:</a></b> </p>
-
-```
-@article{Huang2021tdc,
-  title={Therapeutics Data Commons: Machine Learning Datasets and Tasks for Drug Discovery and Development},
-  author={Huang, Kexin and Fu, Tianfan and Gao, Wenhao and Zhao, Yue and Roohani, Yusuf and Leskovec, Jure and Coley, 
-          Connor W and Xiao, Cao and Sun, Jimeng and Zitnik, Marinka},
-  journal={Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks},
-  year={2021}
-}
-```
-
-<p class="is-size-5"> If you use any of the datasets, make sure to also cite the primary data source as described in <a href="overview/">Datasets section.</a> </p>
-
-<div class="column is-12">
-    <hr />
-</div>
--->
 
 <p class="is-size-3 has-text-centered"> <strong>Explore Therapeutics Data Commons</strong> </p>
 
@@ -352,33 +276,22 @@ individual benchmarks into meaningful groups centered around therapeutic questio
         <div class="columns is-mobile">
             <div class="column is-8 has-text-left is-vcentered">
                 <a class="navbar-brand" href="/">
-                    <span><img src="{{ url_for('static', filename='images/tdc_horizontal.png') }}" alt="Logo" style="max-height: 40px; max-width: 250px;"></span>
+                    <span><img src="{{ url_for('static', filename='images/pytdc_logo.png') }}" alt="Logo" style="max-height: 40px; max-width: 250px;"></span>
                 </a>
             </div>
             <div class="column is-4 has-text-right is-vcentered">
-                <a href="https://zitniklab.hms.harvard.edu/publications/papers/TDC-neurips21-main.pdf">
+                <a href="https://openreview.net/forum?id=HV8vZDDoYc">
                     <span class="icon is-large">
                       <i class="fas fa-file-alt fa-3x"></i>
                     </span>
                 </a>
 
-                <a href="https://github.com/mims-harvard/TDC">
+                <a href="https://github.com/apliko-xyz/PyTDC">
                     <span class="icon is-large">
                       <i class="fas fab fa-github fa-3x"></i>
                     </span>
                 </a>
 
-                <a href="https://twitter.com/ProjectTDC">
-                    <span class="icon is-large">
-                      <i class="fas fab fa-twitter fa-3x"></i>
-                    </span>
-                </a>
-
-                <a href="https://join.slack.com/t/pytdc/shared_invite/zt-x0ujg5v6-zwtQZt83fhRdgrYjXRFz5g">
-                    <span class="icon is-large">
-                      <i class="fas fab fa-slack fa-3x"></i>
-                    </span>
-                </a>
             </div>
         </div>
         
