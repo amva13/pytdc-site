@@ -1,0 +1,71 @@
+- name: Home
+  link: /
+- name: Start
+  link: /start/
+- name: Datasets
+  link: /overview/
+  dropdown:
+    - name: Overview
+      link: /overview/
+    - name: Single-instance Prediction
+      link: /single_pred_tasks/overview
+    - name: Multi-instance Prediction
+      link: /multi_pred_tasks/overview
+    - name: Generation
+      link: /generation_tasks/overview
+- name: Data Functions
+  link: /fct_overview/
+  dropdown:
+    - name: Overview
+      link: /fct_overview/
+    - name: Model Evaluation
+      link: /functions/data_evaluation/
+    - name: Dataset Splits
+      link: /functions/data_split/
+    - name: Data Processing
+      link: /functions/data_process/
+    - name: Molecule Generation Oracles
+      link: /functions/oracles/
+- name: Leaderboards
+  link: /benchmark/overview/
+  dropdown:
+    - name: Guidelines
+      link: /benchmark/overview/
+    - name: ADMET Group
+      link: /benchmark/admet_group/overview
+    - name: DrugCombo Group
+      link: /benchmark/drugcombo_group/overview
+    - name: Docking Group
+      link: /benchmark/docking_group/overview
+    - name: DTI DG Group
+      link: /benchmark/dti_dg_group/overview
+    - name: Single-cell DTI Group
+      link: /benchmark/scdti_group/overview
+    - name: Protein-Peptide Binding Affinity Group
+      link: /benchmark/proteinpeptide_group/overview
+    - name: Counterfactual Prediction Group
+      link: /benchmark/counterfactual_group/overview
+    - name: Clinical Trial Outcome Prediction Group
+      link: /benchmark/clinical_trial/overview
+- name: HF Models
+  link: https://huggingface.co/tdc
+- name: News
+  link: /news/
+- name: Team
+  link: /team/
+- name: Papers
+  dropdown:
+    - name: NeurIPS 2024 AIDrugX
+      link: https://openreview.net/pdf?id=kL8dlYp6IM
+    - name: NeurIPS 2021
+      link: https://openreview.net/pdf?id=8nvgnORnoWr
+    - name: Nature Chemical Biology 2022
+      link: https://www.nature.com/articles/s41589-022-01131-2   
+- name: Code
+  dropdown:
+    - name: GitHub
+      link: https://github.com/mims-harvard/TDC
+    - name: Docs
+      link: https://tdc.readthedocs.io 
+- name: PyTDC (NEW)
+  link: /pytdc/

@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Protein-Peptide Binding Affinity Benchmark Group - TDC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="shortcut icon" type="image/png"
+           href="{{ url_for('static', filename='images/favicon.png') }}" 
+    />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Protein-Peptide Binding Affinity Benchmark Group | TDC</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Protein-Peptide Binding Affinity Benchmark Group" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Artificial intelligence foundation for therapeutic science" />
+<meta property="og:description" content="Artificial intelligence foundation for therapeutic science" />
+<link rel="canonical" href="http://localhost:4000/benchmark/proteinpeptide_group/overview/" />
+<meta property="og:url" content="http://localhost:4000/benchmark/proteinpeptide_group/overview/" />
+<meta property="og:site_name" content="TDC" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Protein-Peptide Binding Affinity Benchmark Group" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Artificial intelligence foundation for therapeutic science","headline":"Protein-Peptide Binding Affinity Benchmark Group","url":"http://localhost:4000/benchmark/proteinpeptide_group/overview/"}</script>
+<!-- End Jekyll SEO tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-183522810-1"></script>
+<script>
+  window['ga-disable-UA-183522810-1'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-183522810-1');
+</script><!-- head scripts --></head>
+
+  <body>
+    
+<nav class="navbar is-primary" >
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-brand" href="/">
+            <span><img src="{{ url_for('static', filename='images/logonav.png') }}" alt="Logo" style="height: auto; width: auto; max-height: 45px; max-width: 250px;"></span>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-end">
+                
+                
+                    
+                    <a href="/" class="navbar-item ">Home</a>
+                    
+                
+                    
+                    <a href="/start/" class="navbar-item ">Start</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="/overview" class="navbar-link ">Datasets</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/overview" class="navbar-item ">Overview</a>
+                            
+                            <a href="/single_pred_tasks/overview" class="navbar-item ">Single-instance Prediction</a>
+                            
+                            <a href="/multi_pred_tasks/overview" class="navbar-item ">Multi-instance Prediction</a>
+                            
+                            <a href="/generation_tasks/overview" class="navbar-item ">Generation</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="/fct_overview" class="navbar-link ">Data Functions</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/fct_overview" class="navbar-item ">Overview</a>
+                            
+                            <a href="/functions/data_evaluation" class="navbar-item ">Model Evaluation</a>
+                            
+                            <a href="/functions/data_split" class="navbar-item ">Dataset Splits</a>
+                            
+                            <a href="/functions/data_process" class="navbar-item ">Data Processing</a>
+                            
+                            <a href="/functions/oracles" class="navbar-item ">Molecule Generation Oracles</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="/benchmark/overview" class="navbar-link ">Leaderboards</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/benchmark/overview" class="navbar-item ">Guidelines</a>
+                            
+                            <a href="/benchmark/admet_group/overview" class="navbar-item ">ADMET Group</a>
+                            
+                            <a href="/benchmark/drugcombo_group/overview" class="navbar-item ">DrugCombo Group</a>
+                            
+                            <a href="/benchmark/docking_group/overview" class="navbar-item ">Docking Group</a>
+                            
+                            <a href="/benchmark/dti_dg_group/overview" class="navbar-item ">DTI DG Group</a>
+                            
+                            <a href="/benchmark/scdti_group/overview" class="navbar-item ">Single-cell DTI Group</a>
+                            
+                            <a href="/benchmark/proteinpeptide_group/overview" class="navbar-item ">Protein-Peptide Binding Affinity Group</a>
+                            
+                            <a href="/benchmark/counterfactual_group/overview" class="navbar-item ">Counterfactual Prediction Group</a>
+                            
+                            <a href="/benchmark/clinical_trial/overview" class="navbar-item ">Clinical Trial Outcome Prediction Group</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="https://huggingface.co/tdc" class="navbar-item ">HF Models</a>
+                    
+                
+                    
+                    <a href="/news" class="navbar-item ">News</a>
+                    
+                
+                    
+                    <a href="/team" class="navbar-item ">Team</a>
+                    
+                
+                <a href="https://zitniklab.hms.harvard.edu/publications/papers/TDC-neurips21-main.pdf" class="navbar-item">NeurIPS Paper</a>
+                <a href="https://www.nature.com/articles/s41589-022-01131-2" class="navbar-item">Nat Chem Bio Paper</a>
+                <a href="https://tdc.readthedocs.io" class="navbar-item">Docs</a>
+                <a href="https://github.com/mims-harvard/TDC" class="navbar-item">GitHub</a>
+                
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                
+                <div class="column is-4-desktop is-4-tablet">
+                    
+
+<aside class="menu">
+
+    <p class="menu-label"></p>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="/benchmark/proteinpeptide_group/overview" class=""><strong>Protein-Peptide Binding Affinity Group Leaderboard</strong></a>
+            
+                {% for l in leaderboards %}
+                <li><a href="/benchmark/proteinpeptide_group/{{l}}" class=""><code>TDC.{{l}}</code> Leaderboard</a></li>
+                {% endfor %}
+            
+        </li>
+            
+    </ul>
+
+    <p class="menu-label"></p>
+    <ul class="menu-list">
+        
+        <li>
+            <a href="" class=""><strong>References</strong></a>
+            
+            <ul>
+                
+                
+                <li><a href="/benchmark/overview#step-by-step-instructions" class="">Submission Instructions</a></li>
+                
+                
+                
+                <li><a href="/benchmark/overview#further-details-about-benchmark-groups-in-tdc" class="">BenchmarkGroup Class Documentation</a></li>
+                
+                
+                
+                <li><a href="/benchmark/overview" class="">Leaderboard Guidelines</a></li>
+                
+                
+                
+                <li><a href="https://dataverse.harvard.edu/file.xhtml?fileId=9649623&version=85.0" class="">Dataset Description</a></li>
+                
+                
+            </ul>
+            
+        </li>
+            
+    </ul>
+
+</aside>
+                </div>
+                
+                <div class="column is-8">
+                    
+                    
+                    
+                    
+<div class="content">
+    <h2 id="protein-peptide-interaction-benchmark-group-tcr-epitope">Protein-Peptide Interaction Benchmark Group (+TCR-Epitope)</h2>
+
+<p class="is-size-5">TDC-2 introduces the Protein-Peptide Binding Affinity prediction task. The predictive, non-generative task is to learn a model estimating a function of a protein, peptide, antigen processing pathway, biological context, and interaction features. It outputs a binding affinity value or binary label indicating strong or weak binding. The binary label can also include additional biomarkers, such as allowing for a positive label if and only if the binding interaction is specific. 
+  <br />
+  To account for additional biomarkers beyond binding affinity value, our task is specified with a binary label.
+<br />
+TDC-2 provides datasets and benchmarks for a generalized protein-peptide binding interaction prediction task and a TCR-Epitope binding interaction prediction task.</p>
+
+<p class="is-size-5"></p>
+
+<p class="is-size-5">To access a generalized protein-peptide benchmark in the group, use the following code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group.protein_peptide_group</span> <span class="kn">import</span> <span class="n">ProteinPeptideGroup</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">ProteinPeptideGroup</span><span class="p">()</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get_train_valid_split</span><span class="p">()</span> <span class="c1"># val dataset will be empty. use the train dataset if fine-tuning desired.
+</span><span class="n">test</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get_test</span><span class="p">()</span>
+
+<span class="c1">## --- (optional) train your model --- ##
+</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>  <span class="c1"># modify as per your model code and test output
+</span><span class="n">out</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p class="is-size-5">To access a TCR-Epitope benchmark in the group, use the following code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group.protein_peptide_group</span> <span class="kn">import</span> <span class="n">ProteinPeptideGroup</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">TCREpitopeGroup</span><span class="p">()</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get_train_valid_split</span><span class="p">()</span> 
+<span class="n">test</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get_test</span><span class="p">()</span>
+
+<span class="c1">## --- train your model --- ##
+</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>  <span class="c1"># modify as per your model code and test output
+</span><span class="n">res</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p class="is-size-5"> Follow the <b><a href="/benchmark/overview">instructions</a></b> on how to use the <code>BenchmarkGroup</code> class and obtain training, validation, and test sets, and how to submit your model to the leaderboard. </p>
+
+<div class="column is-12">
+    <hr />
+</div>
+
+</div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        <div class="columns is-mobile">
+            <div class="column is-8 has-text-left is-vcentered">
+                <a class="navbar-brand" href="/">
+                    <span><img src="{{ url_for('static', filename='images/tdc_horizontal.png') }}" alt="Logo" style="max-height: 40px; max-width: 250px;"></span>
+                </a>
+            </div>
+            <div class="column is-4 has-text-right is-vcentered">
+                <a href="https://zitniklab.hms.harvard.edu/publications/papers/TDC-neurips21-main.pdf">
+                    <span class="icon is-large">
+                      <i class="fas fa-file-alt fa-3x"></i>
+                    </span>
+                </a>
+
+                <a href="https://github.com/mims-harvard/TDC">
+                    <span class="icon is-large">
+                      <i class="fas fab fa-github fa-3x"></i>
+                    </span>
+                </a>
+
+                <a href="https://twitter.com/ProjectTDC">
+                    <span class="icon is-large">
+                      <i class="fas fab fa-twitter fa-3x"></i>
+                    </span>
+                </a>
+
+                <a href="https://join.slack.com/t/pytdc/shared_invite/zt-x0ujg5v6-zwtQZt83fhRdgrYjXRFz5g">
+                    <span class="icon is-large">
+                      <i class="fas fab fa-slack fa-3x"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>
+

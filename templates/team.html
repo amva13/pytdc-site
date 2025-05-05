@@ -1,0 +1,143 @@
+{% extends "index_template.html" %}
+{% block content %}
+    
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-12">
+                <div class="columns is-multiline">
+        
+                    <div class="column is-12">
+                        <p class="title is-3 has-text-centered">
+                            <span>Core Team</span>
+                        </p>
+                        <div class="columns is-centered">
+                            <div class="column is-6 content has-text-centered">
+                                <p><p>Developing and Maintaining Therapeutics Data Commons</p></p>
+                            </div>
+                        </div>
+            
+                        <div class="columns is-centered has-text-centered">
+                        <button class="button is-info is-focused is-hover is-light is-centered">
+                            <span class="icon">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span><a href='mailto:marinka@hms.harvard.edu'> Contact us </a></span>
+                        </button>
+                        </div>
+            
+                    </div>
+                    <div class="column is-12">
+                        <div class="columns is-multiline is-centered">
+                            {% for member in team[0].core %}
+                            <div class="column is-3-desktop is-4-tablet">
+                                <div class="box has-text-centered">            
+                                    <figure class="image is-rounded">
+                                        <img src="{{ member.image }}" alt="{{ member.name }}">
+                                    </figure>
+                            
+                                    <p class="title is-1"> </p>
+                                    <p class="title is-5">{{ member.name }}</p>
+                                    <p class="subtitle is-6">
+                                        <p class="is-small">{{ member.affiliation }}</p>
+                                        <a href="https://alejandrovelez.com" class="is-link is-small">Website</a>
+                                    </p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="column is-12">
+                        <hr />
+                    </div>
+                    <div class="column is-12">
+                        <p class="title is-3 has-text-centered">
+                            <span>Collaborators</span>
+                        </p>
+                        <div class="columns is-centered">
+                            <div class="column is-6 content has-text-centered">
+                                <p></p>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="column is-12">
+                        <div class="columns is-multiline is-centered">
+                            {% for member in team[1].collaborators %}
+                            <div class="column is-3-desktop is-4-tablet">
+                                <div class="box has-text-centered">
+                                    <p class="title is-1"> </p>
+                                    <p class="title is-5">{{ member.name }}</p>
+                                    <p class="subtitle is-6">
+                                        <p class="is-small">{{ member.affiliation }}</p>
+                                        <a href="{{ member.profile }}" class="is-link is-small">Website</a>
+                                    </p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="column is-12">
+                        <hr />
+                    </div>
+                    <div class="column is-12">
+                        <p class="title is-3 has-text-centered">
+                            <span>Contributors</span>
+                        </p>
+                        <div class="columns is-centered">
+                        <div class="column is-6 content has-text-centered">
+                            <p></p>
+                        </div>
+                    </div>    
+                </div>
+                <div class="column is-12">
+                    <div class="columns is-multiline is-centered">
+                        {% for member in team[2].contributors %}
+                        <div class="column is-3-desktop is-4-tablet">
+                            <div class="box has-text-centered">
+                                <p class="title is-1"> </p>
+                                <p class="title is-5">{{ member.name }}</p>
+                                <p class="subtitle is-6">
+                                    <p class="is-small">{{ member.affiliation }}</p>
+                                    <a href="{{ member.profile }}" class="is-link is
+                                    -small">Website</a>
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="column is-12">
+                    <hr />
+                </div>    
+                <div class="column is-12">
+                    <p class="title is-3 has-text-centered">
+                        <span></span>
+                    </p>
+                    <div class="columns is-centered">
+                        <div class="column is-6 content has-text-centered">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-12">
+                    <div class="columns is-multiline is-centered">
+                        {% for member in team[3].institutions %}
+                        <div class="column is-3-desktop is-3-tablet">
+                            <figure class="image is-rounded">
+                                <a href="{{ member.url }}"><img src="{{ member.image }}"></a>
+                            </figure>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="column is-12">
+                    <hr />
+                </div>   
+            </div>                 
+            <div class="content"></div>
+        </div>    
+    </div>
+</div>
+</section>
+{% endblock %}
+

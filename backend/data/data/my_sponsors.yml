@@ -1,0 +1,115 @@
+- core:
+    - name: Alejandro Velez-Arce
+      image: /static/images/471354834_10162264233914248_4444897384512818222_n.jpg 
+      affiliation: Harvard, MIT
+      profile: https://alejandrovelez.com
+    - name: Kexin Huang
+      image: /static/images/kexin_img.jpg
+      affiliation: Stanford
+      profile: https://www.kexinhuang.com
+    - name: Michelle Li
+      image: /static/images/michelle.jpg
+      affiliation: Harvard
+      profile: https://michellemli.com/
+    - name: Xiang Lin
+      image: /static/images/xiang_lin2.png
+      affiliation: Harvard
+      profile: https://dbmi.hms.harvard.edu/people/xiang-lin
+    - name: Tianfan Fu
+      image: /static/images/tianfan_img.jpeg
+      affiliation: Georgia Tech
+      profile: https://futianfan.github.io/
+    - name: Wenhao Gao
+      image: /static/images/wenhao_img.jpg
+      affiliation: MIT
+      profile: https://scholar.google.com/citations?user=s4eywrUAAAAJ&hl=en
+    - name: Ada Fang
+      image: /static/images/ada_fang.png
+      affiliation: Harvard
+      profile: https://chemistry.harvard.edu/people/ada-fang
+    - name: Marinka Zitnik
+      image: /static/images/marinka_img.jpg
+      affiliation: Harvard
+      profile: http://zitniklab.hms.harvard.edu/
+- collaborators:
+    - name: Bradley L. Pentelute
+      affiliation: MIT
+      profile: https://chemistry.mit.edu/profile/bradley-l-pentelute/ 
+    - name: Manolis Kellis
+      affiliation: MIT
+      profile: https://web.mit.edu/manoli/
+    - name: Connor Coley
+      # image: /img/connor_img.jpg
+      affiliation: MIT
+      profile: https://coley.mit.edu/
+    - name: Jure Leskovec
+      # image: /img/jure_img.jpg
+      affiliation: Stanford
+      profile: https://cs.stanford.edu/~jure/
+    - name: Jimeng Sun
+      # image: /img/jimeng_img.jpg
+      affiliation: UIUC
+      profile: http://sunlab.org/
+    - name: Cao (Danica) Xiao
+      # image: /img/danica_img.jpg
+      affiliation: IQVIA
+      profile: https://sites.google.com/view/danicaxiao/home?authuser=0
+- contributors:
+    - name: Jesus Caraballo Anaya
+      affiliation: MIT
+      profile: https://jesuscaraball0.github.io/
+    - name: Joseph Brown
+      affiliation: University of Toronto
+      profile: https://acceleration.utoronto.ca/researcher/joseph-brown
+    - name: Ben Birnbaum
+      affiliation: Inductive Bio
+      profile: inductive.bio
+    - name: Jannis Born
+      affiliation: IBM Research
+      profile: https://researcher.watson.ibm.com/researcher/view.php?person=zurich-JAB
+    - name: Yannis Papanikolaou
+      affiliation: HealX
+      profile: https://scholar.google.com/citations?user=Gdx6A_sAAAAJ&hl=el
+    - name: Anna Weber
+      affiliation: IBM Research
+      profile: https://researcher.watson.ibm.com/researcher/view.php?person=zurich-WBR
+    - name: Yusuf Roohani
+      affiliation: Stanford
+      profile: https://cs.stanford.edu/people/yhr/
+    - name: Yue Zhao
+      image: /img/yue_img.jpg
+      affiliation: CMU
+      profile: https://www.andrew.cmu.edu/user/yuezhao2/
+    - name: Nitin Pasumarthy
+      image: /img/nitin_pasumarthy.jpeg
+      affiliation: LinkedIn
+      profile: https://www.linkedin.com/in/nitinpasumarthy/
+    - name: Yuanqi Du
+      image: /img/yuanqi.jpeg
+      affiliation: Cornell
+      profile: https://yuanqidu.github.io/
+- institutions:
+    - name:
+      image: /static/images/harvard.png
+      website: https://www.harvard.edu/
+    - name:
+      image: /static/images/hms.png
+      website: https://hms.harvard.edu/
+    - name:
+      image: /static/images/mit.png
+      website: https://web.mit.edu/
+    - name:
+      image: /static/images/stanford.png
+      website: https://www.stanford.edu/
+    - name:
+      image: /static/images/cmu.png
+      website: https://www.cmu.edu/
+    - name:
+      image: /static/images/georgia-tech.png
+      website: https://www.gatech.edu/
+    - name:
+      image: /static/images/uiuc.png
+      website: https://illinois.edu/
+    - name:
+      image: /static/images/cornell.png
+      website: https://www.cornell.edu/

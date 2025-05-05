@@ -1,0 +1,5 @@
+body {
+    background-image: url('static/images/hero.jpg');
+    background: no-repeat center center;
+    background-size: cover; /* Ensures the background image covers the entire page */
+}
