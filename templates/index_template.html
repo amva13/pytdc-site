@@ -8,7 +8,7 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
     <link rel="shortcut icon" type="image/png"
-           href="{{ url_for('static', filename='images/favicon.png') }}" 
+           href="{{ url_for('static', filename='images/pytdc_logo.png') }}" 
     />
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="{{ title }}" />
 <meta property="og:description" content="{{ title }}" />
-<meta property="og:site_name" content="TDC" />
+<meta property="og:site_name" content="PyTDC" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="{{ title }}" />
@@ -102,7 +102,7 @@
         <div class="columns is-vcentered">
             <div class="column is-12 is-size-4 has-text-centered">
                 <div class="box has-background-white">
-                    Key presentations and publications of the Commons</a>
+                    Key presentations and publications</a>
                 </div>
             </div>
         </div>
@@ -152,6 +152,8 @@
         <div class="columns is-vcentered">
             <div class="column is-10 is-offset-1 has-text-centered">
                 <a href="/start" class="button is-rounded is-large is-info is-focused">Get Started</a>
+                <a href="/pytdc" class="button is-rounded is-large is-info is-focused">Roadmap</a>
+                <a href="https://pypi.org/project/pytdc-nextml/" class="button is-rounded is-large is-info is-focused">SDK</a>
             </div>
         </div>
 </div>
@@ -191,6 +193,9 @@
         
     </div>
 </footer>
+{% endblock %}
+{% block scripts %}
+<script src="/scripts/app.js" type="text/javascript"></script><!-- footer scripts --></body>
 {% endblock %}
 </body>
 </html>

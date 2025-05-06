@@ -48,24 +48,18 @@
     - name: Clinical Trial Outcome Prediction Group
       link: /benchmark/clinical_trial/overview
 - name: HF Models
-  link: https://huggingface.co/tdc
-- name: News
-  link: /news/
+  link: https://huggingface.co/apliko
 - name: Team
   link: /team/
 - name: Papers
   dropdown:
+    - name: ICML 2025
+      link: https://openreview.net/forum?id=HV8vZDDoYc
     - name: NeurIPS 2024 AIDrugX
       link: https://openreview.net/pdf?id=kL8dlYp6IM
-    - name: NeurIPS 2021
-      link: https://openreview.net/pdf?id=8nvgnORnoWr
-    - name: Nature Chemical Biology 2022
-      link: https://www.nature.com/articles/s41589-022-01131-2   
 - name: Code
   dropdown:
     - name: GitHub
-      link: https://github.com/mims-harvard/TDC
-    - name: Docs
-      link: https://tdc.readthedocs.io 
-- name: PyTDC (NEW)
+      link: https://github.com/apliko-xyz/PyTDC
+- name: Roadmap 
   link: /pytdc/

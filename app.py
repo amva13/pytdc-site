@@ -41,8 +41,8 @@ def index():
         "navbar": navigation_data,
         "current_url": request.path,
         "callouts": callouts_data,
-        "title": "TDC2: A Community Platform for AI-driven Drug Discovery and Development",
-        "description": "TDC2 is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, tasks, and leaderboards.",
+        "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
         "endpt": ""
     }
     args = TDCRequest(**args)
@@ -50,11 +50,27 @@ def index():
 
 @app.route('/start')
 def start():
-    return render_template('start.html')
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
+    return render_template('start.html', **args)
 
 @app.route('/overview')
 def overview():
-    return render_template('overview/index.html')
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
+    return render_template('overview/index.html', **args)
 
 @app.route("/news")
 def news():
@@ -64,7 +80,7 @@ def news():
 def team():
     args = TDCRequest(
         title="Team",
-        description="Meet the TDC2 team.",
+        description="Meet the PyTDC team.",
         endpt="team",
         navbar=navigation_data,
         current_url=request.path,
@@ -78,14 +94,30 @@ def single_pred_tasks():
         "items": data.single_pred_tasks.tasks,
         "data": [(endpt, label, data.single_pred_tasks.datasets[endpt]) for endpt, label, _ in data.single_pred_tasks.tasks[1:]] # skip adme 
     }
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "Single-instance prediction tasks | PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
+    vars.update(args)
     return render_template('single_pred_tasks/index.html', **vars)
 
 @app.route("/single_pred_tasks/<task>")
 def single_pred_tasks_data(task):
+    args = TDCRequest(
+        title=f"{task}",
+        description=f"{task} datasets",
+        endpt=f"/single_pred_tasks/{task}",
+        navbar=navigation_data,
+        current_url=request.path,
+    )
     if task == "adme":
-        return render_template("single_pred_tasks/adme.html")
+        return render_template("single_pred_tasks/adme.html", **args)
     if task.lower() == "mpc":
-        return render_template("single_pred_tasks/MPC.html")
+        return render_template("single_pred_tasks/MPC.html", **args)
     elif task in data.single_pred_tasks.datasets:
         datasets = []
         for var in data.single_pred_tasks.datasets[task]:
@@ -94,7 +126,7 @@ def single_pred_tasks_data(task):
                     raise Exception(var, len(data.single_pred_tasks.meta[var])) 
                 datasets.append([var] + data.single_pred_tasks.meta[var])
         desc = data.single_pred_tasks.desc[task]
-        args = {
+        args2 = {
             "datasets": datasets,
             "task": task,
             "desc_id": desc[0],
@@ -105,6 +137,7 @@ def single_pred_tasks_data(task):
             "desc_product": desc[5],
             "desc_pipeline": desc[6],
         }
+        args.update(args2)
         return render_template("single_pred_tasks/task.html", **args)
     return redirect("/single_pred_tasks/overview")
 
@@ -114,34 +147,51 @@ def multi_pred_tasks():
         "items": data.multi_pred_tasks.tasks,
         "data": [(endpt, label, data.multi_pred_tasks.datasets[endpt]) for endpt, label, _ in data.multi_pred_tasks.tasks]
     }
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "Multi-instance prediction tasks | PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
+    vars.update(args)
     return render_template("multi_pred_tasks/index.html", **vars)
 
 @app.route("/multi_pred_tasks/<task>")
 def multi_pred_task_data(task):
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": f"{task} | PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
     if task == "catalyst":
-        return render_template("multi_pred_tasks/catalyst.html")
+        return render_template("multi_pred_tasks/catalyst.html", **args)
     elif task == "ddi":
-        return render_template("multi_pred_tasks/ddi.html")
+        return render_template("multi_pred_tasks/ddi.html", **args)
     elif task == "drugres":
-        return render_template("multi_pred_tasks/drugres.html")
+        return render_template("multi_pred_tasks/drugres.html", **args)
     elif task == "dti":
-        return render_template("multi_pred_tasks/dti.html")
+        return render_template("multi_pred_tasks/dti.html", **args)
     elif task == "mti":
-        return render_template("multi_pred_tasks/mti.html")
+        return render_template("multi_pred_tasks/mti.html", **args)
     elif task == "ppi":
-        return render_template("multi_pred_tasks/ppi.html")
+        return render_template("multi_pred_tasks/ppi.html", **args)
     elif task == "proteinpeptide":
-        return render_template("multi_pred_tasks/proteinpeptide.html")
+        return render_template("multi_pred_tasks/proteinpeptide.html", **args)
     elif task == "tcrepitope":
-        return render_template("multi_pred_tasks/tcrepitope.html")
+        return render_template("multi_pred_tasks/tcrepitope.html", **args)
     elif task == "antibodyaff":
-        return render_template("multi_pred_tasks/antibodyaff.html")
+        return render_template("multi_pred_tasks/antibodyaff.html", **args)
     elif task == "trialoutcome":
-        return render_template("multi_pred_tasks/trialoutcome.html")
+        return render_template("multi_pred_tasks/trialoutcome.html", **args)
     elif task == "scdti":
-        return render_template("multi_pred_tasks/scdti.html")
+        return render_template("multi_pred_tasks/scdti.html", **args)
     elif task == "counterfactual":
-        return render_template("multi_pred_tasks/counterfactual.html")
+        return render_template("multi_pred_tasks/counterfactual.html", **args)
     elif task in data.multi_pred_tasks.datasets:
         datasets = []
         for var in data.multi_pred_tasks.datasets[task]:
@@ -150,7 +200,7 @@ def multi_pred_task_data(task):
                     raise Exception(var, len(data.multi_pred_tasks.meta[var])) 
                 datasets.append([var] + data.multi_pred_tasks.meta[var])
         desc = data.multi_pred_tasks.desc[task]
-        args = {
+        args2 = {
             "datasets": datasets,
             "task": task,
             "desc_id": desc[0],
@@ -161,54 +211,111 @@ def multi_pred_task_data(task):
             "desc_product": desc[5],
             "desc_pipeline": desc[6],
         }
+        args.update(args2)
         return render_template("multi_pred_tasks/task.html", **args)
     else:
         return redirect("/multi_pred_tasks/overview")
         
 @app.route("/generation_tasks/overview")
 def generation_tasks():
-    return render_template("generation_tasks/index.html")
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
+    return render_template("generation_tasks/index.html", **args)
 
 @app.route("/generation_tasks/<task>")
 def generation_tasks_data(task):
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
     if task == "molgen":
-        return render_template("generation_tasks/molgen.html")
+        return render_template("generation_tasks/molgen.html", **args)
     elif task == "reaction":
-        return render_template("generation_tasks/reaction.html")
+        return render_template("generation_tasks/reaction.html", **args)
     elif task == "retrosyn":
-        return render_template("generation_tasks/retrosyn.html")
+        return render_template("generation_tasks/retrosyn.html", **args)
     elif task == "sbdd":
-        return render_template("generation_tasks/sbdd.html")
+        return render_template("generation_tasks/sbdd.html", **args)
     else:
         return redirect("/generation_tasks/overview")
 
 @app.route("/fct_overview")
 def fct_overview():
-    return render_template("/fct_overview.html")
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
+    return render_template("/fct_overview.html", **args)
 
 @app.route("/functions/<section>")
 def function_page(section):
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
     if section == "oracles":
-        return render_template("/functions/oracles.html")
+        return render_template("/functions/oracles.html", **args)
     elif section == "data_evaluation":
-        return render_template("/functions/data_evaluation.html")
+        return render_template("/functions/data_evaluation.html", **args)
     elif section == "data_process":
-        return render_template("/functions/data_process.html")
+        return render_template("/functions/data_process.html", **args)
     elif section == "data_split":
-        return render_template("/functions/data_split.html")
+        return render_template("/functions/data_split.html", **args)
     else:
         return redirect("/fct_overview")
 
 @app.route("/benchmark")
 def benchmark():
-    return render_template("/benchmark/index.html")
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
+    return render_template("/benchmark/index.html", **args)
 
 @app.route("/benchmark/overview")
 def benchmark_overview():
-    return render_template("/benchmark/index.html")
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
+    return render_template("/benchmark/index.html", **args)
 
 @app.route("/benchmark/<group>/<leaderboard>")
 def benchmark_leaderboard_overview(group, leaderboard):
+    args = {
+        "navbar": navigation_data,
+        "current_url": request.path,
+        "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+        "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+        "endpt": ""
+    }
+    args = TDCRequest(**args)
     leads = benchmark_groups._GROUP_MEMBERSHIP[group]
     if leaderboard == "overview":
         if group != "clinical_trial":
@@ -216,16 +323,17 @@ def benchmark_leaderboard_overview(group, leaderboard):
             s = "/benchmark/{}.html".format(group)
         else:
             s = "/benchmark/clinical_trial.html"
-        args = {
+        args2 = {
             "leaderboards": leads
         }
+        args.update(args2)
         return render_template(s, **args)
     elif leaderboard == "DrugComb_CSS" and group == "drugcombo_group":
-        return render_template("/benchmark/drugcomb_css.html")
+        return render_template("/benchmark/drugcomb_css.html", **args)
     elif leaderboard == "DRD3" and group == "docking_group":
-        return render_template("/benchmark/drd3.html")
+        return render_template("/benchmark/drd3.html", **args)
     elif leaderboard == "scperturb_drug_SrivatsanTrapnell2020_sciplex2" and group == "counterfactual_group":
-        return render_template("/benchmark/scperturb_drug_SrivatsanTrapnell2020_sciplex2.html")
+        return render_template("/benchmark/scperturb_drug_SrivatsanTrapnell2020_sciplex2.html", **args)
     else:
         lb = benchmark_leaderboards._LEADERBOARDS[leaderboard]
         order, entries, scores = lb[2], lb[3], lb[4]
@@ -235,7 +343,7 @@ def benchmark_leaderboard_overview(group, leaderboard):
         sidxs = sorted([i for i in range(len(entries))], key=lambda idx: entries[idx][-1] if increasing else -entries[idx][-1])
         lb[3] = [entries[i] for i in sidxs]
         lb[4] = [scores[i] for i in sidxs]
-        args = {
+        args2 = {
             "entries": entries,
             "scores": scores,
             "group": group,
@@ -246,6 +354,7 @@ def benchmark_leaderboard_overview(group, leaderboard):
             "extra_cols": lb[-2],
             "leaderboards": leads,
         }
+        args.update(args2)
         return render_template("/benchmark/leaderboard.html", **args)
 
 
@@ -259,17 +368,6 @@ def favicon():
 @app.route("/_next/static/<path:filename>")
 def next_static_files(filename):
     return send_from_directory("static/_next/static", filename)
-
-class FctOverview(Resource):
-
-    def get(self):
-        return make_response(render_template("/fct_overview.html"), 200, {'Content-Type': 'text/html'})
-
-
-class FeedbackForm(Resource):
-
-    def get(self):
-        return make_response(render_template("/index-js.html"), 200, {'Content-Type': 'text/html'})
 
 
 class TDC2Homepage(Resource):
@@ -285,18 +383,16 @@ class LegacyHome(Resource):
             "navbar": navigation_data,
             "current_url": request.path,
             "callouts": callouts_data,
-            "title": "TDC2: A Community Platform for AI-driven Drug Discovery and Development",
-            "description": "TDC2 is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, tasks, and leaderboards.",
+            "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+            "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
             "endpt": ""
         }
         args = TDCRequest(**args)
         return make_response(render_template("/index_template.html", **args), 200, {'Content-Type': 'text/html'})
     
-    
-api.add_resource(FeedbackForm, "/feedback")
 api.add_resource(TDC2Homepage, "/pytdc")
 api.add_resource(LegacyHome, "/home")
     
 
 if __name__ == '__main__':
-    app.run(debug=True)  # debug=True for development mode
+    app.run() 
