@@ -13,7 +13,7 @@ const SecWhoWeContant = () => {
               <Span /> 
               <Span /> 
             </div>
-            <h4 data-aos="fade-up">TDC API-first Architecture</h4>
+            <h4 data-aos="fade-up">PyTDC API-first Architecture</h4>
             <p data-aos="fade-up">A collection of multimodal continually updated heterogeneous data sources is unified under the 
               introduced &quot;API-first-dataset&quot; architecture. Inspired by API-first design, this microservice architecture is 
               implemented using the model-view-controller design pattern to enable multimodal data views 

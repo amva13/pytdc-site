@@ -17,7 +17,7 @@
             
             <ul>
                 {% for l in leaderboards %}
-                <li><a href="/benchmark/drugcombo_group/{{l}}" class=""><code>TDC.{{l}}</code> Leaderboard</a></li>
+                <li><a href="/benchmark/drugcombo_group/{{l}}" class=""><code>tdc_ml.{{l}}</code> Leaderboard</a></li>
                 {% endfor %}
             </ul>
             
@@ -64,13 +64,13 @@
 
 <p class="is-size-5">Drug combinations create promising new therapeutic opportunities for expanding the use of drugs and improving their efficacy. For instance, simultaneous modulation of multiple targets can address the issue of drug resistance seen in cancer treatments. However, experimentally exploring the space of possible drug combinations is not a feasible. For this reason, ML models capable of identifying candidate combinatorial treatments could be very valuable. </p>
 
-<p class="is-size-5"> Synergy represents the deviation of observed drug combination response from expected effects had non-interaction. This benchmark group is defined on <a href="https://academic.oup.com/nar/article-abstract/47/W1/W43/5486743"> <code>TDC.DrugComb</code> </a>dataset and evaluates ML models for their ability to predict five established synergy endpoints:</p>
+<p class="is-size-5"> Synergy represents the deviation of observed drug combination response from expected effects had non-interaction. This benchmark group is defined on <a href="https://academic.oup.com/nar/article-abstract/47/W1/W43/5486743"> <code>tdc_ml.DrugComb</code> </a>dataset and evaluates ML models for their ability to predict five established synergy endpoints:</p>
 <ul class="is-size-5">
-    <li>The main endpoint is called drug combination sensitivity score <code>TDC.DrugComb_CSS</code>, which is derived using the relative IC50 values of compounds and the areas under dose-response curves. For the CSS, we also provide information on tissue identity of cell lines where drug response was measured.</li>
-    <li>The Bliss model endpoint <code>TDC.DrugComb_Bliss</code>.</li>
-    <li>The highest single agent endpoint <code>TDC.DrugComb_HSA</code>. </li>
-    <li>The Loewe additivity model endpoint <code>TDC.DrugComb_Loewe</code>.</li>
-    <li>The zero interaction potency endpoint <code>TDC.DrugComb_ZIP</code>.</li>
+    <li>The main endpoint is called drug combination sensitivity score <code>tdc_ml.DrugComb_CSS</code>, which is derived using the relative IC50 values of compounds and the areas under dose-response curves. For the CSS, we also provide information on tissue identity of cell lines where drug response was measured.</li>
+    <li>The Bliss model endpoint <code>tdc_ml.DrugComb_Bliss</code>.</li>
+    <li>The highest single agent endpoint <code>tdc_ml.DrugComb_HSA</code>. </li>
+    <li>The Loewe additivity model endpoint <code>tdc_ml.DrugComb_Loewe</code>.</li>
+    <li>The zero interaction potency endpoint <code>tdc_ml.DrugComb_ZIP</code>.</li>
 </ul>
 
 <p class="is-size-5">To retrieve names of all benchmarks in this group, type the following:</p>
@@ -82,7 +82,7 @@
 
 <p class="is-size-5">To access a benchmark in the group, use the following code:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group</span> <span class="kn">import</span> <span class="n">drugcombo_group</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.benchmark_group</span> <span class="kn">import</span> <span class="n">drugcombo_group</span>
 <span class="n">group</span> <span class="o">=</span> <span class="n">drugcombo_group</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">'data/'</span><span class="p">)</span>
 
 <span class="n">benchmark</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Drugcomb_CSS'</span><span class="p">)</span>
@@ -116,7 +116,7 @@ Note that the output includes the automatic evaluations across tissues:
 
 <p class="is-size-5"> For every dataset in the benchmark, we use the <a href="/functions/data_split">drug combination split</a> to partition the dataset into training, validation, and test sets. We hold out 20% data samples for the test set. The performance metric is MAE. </p>
 
-<p class="is-size-5"> Note that tissue types are <b>automatically</b> determined based on test set prediction on the <code>TDC.DrugComb_CSS</code> endpoint.</p>
+<p class="is-size-5"> Note that tissue types are <b>automatically</b> determined based on test set prediction on the <code>tdc_ml.DrugComb_CSS</code> endpoint.</p>
 
 <div class="column is-12">
     <hr />
@@ -137,35 +137,35 @@ Note that the output includes the automatic evaluations across tissues:
   </tr>
   </thead>
   <tr>
-    <td><code>TDC.DrugComb_CSS</code></td>
+    <td><code>tdc_ml.DrugComb_CSS</code></td>
     <td>297,098</td>
     <td>Regression</td>
     <td>MAE</td>
     <td>Combination</td>
   </tr>
   <tr>
-    <td><code>TDC.DrugComb_HSA</code></td>
+    <td><code>tdc_ml.DrugComb_HSA</code></td>
     <td>297,098</td>
     <td>Regression</td>
     <td>MAE</td>
     <td>Combination</td>
   </tr>
   <tr>
-    <td><code>TDC.DrugComb_Loewe</code></td>
+    <td><code>tdc_ml.DrugComb_Loewe</code></td>
     <td>297,098</td>
     <td>Regression</td>
     <td>MAE</td>
     <td>Combination</td>
   </tr>
   <tr>
-    <td><code>TDC.DrugComb_Bliss</code></td>
+    <td><code>tdc_ml.DrugComb_Bliss</code></td>
     <td>297,098</td>
     <td>Regression</td>
     <td>MAE</td>
     <td>Combination</td>
   </tr>
   <tr>
-    <td><code>TDC.DrugComb_Zip</code></td>
+    <td><code>tdc_ml.DrugComb_Zip</code></td>
     <td>297,098</td>
     <td>Regression</td>
     <td>MAE</td>

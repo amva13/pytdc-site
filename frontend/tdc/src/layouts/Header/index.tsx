@@ -48,7 +48,7 @@ const Header = () => {
                     <li><a onClick={moveSmooth} href="#team" className="login-btn" style={{borderColor:'#FFEFC2', textAlign:'center', alignItems:'center'}}>Team</a></li>
                     {/* <li><a onClick={moveSmooth} href="#contact" className="login-btn" style={{borderColor:'#FFEFC2', textAlign:'center', alignItems:'center'}}>Contact</a></li> */}
                   </ul>
-                  <a href="https://tdcommons.ai/home" className="btn login-btn ml-50" style={{borderColor:'#FFDF00'}}>Homepage</a>
+                  <a href="/home" className="btn login-btn ml-50" style={{borderColor:'#FFDF00'}}>Homepage</a>
                 </div>
               </div>
             </nav>

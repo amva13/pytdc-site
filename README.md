@@ -1,5 +1,5 @@
 # tc2website-flask (+ nextjs)
-Hello, this is the flask implementation for tdc-2 website (UPDATE: with nextjs). Our documentation is still under development. For most matters, you can refer to the TDC repo.
+Hello, this is the flask implementation for PyTDC website (UPDATE: with nextjs). Our documentation is still under development. For most matters, you can refer to the TDC repo.
 
 We have developed a new, more decentralized method for adding entries to TDC leaderboards. Follow the following minimalist guide to add your entries.
 

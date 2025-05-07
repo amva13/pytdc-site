@@ -17,7 +17,7 @@ type SecOurRoadmapProps = {
 const SecOurRoadmap: React.FC<SecOurRoadmapProps> = ({ data }) => {
   return (
     <section className="roadmap" style={{ paddingBottom: 0 }} id="roadmap">
-      <SectionHeading title="TDC-2 Roadmap" text="" />
+      <SectionHeading title="PyTDC Roadmap" text="" />
       <div className="container">
         <div className="row">
           <div className="timeline-split">

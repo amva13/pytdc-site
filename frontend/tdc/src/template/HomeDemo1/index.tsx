@@ -5,7 +5,7 @@ import {
   service_single_content,
   TeamMember,
   PartnersData,
-  SingleCoolFact
+  timelineInfo,
 } from '../../data/data-containers/data-HomeDemo1';
 import { handelTitle } from '../../utils';
 
@@ -14,11 +14,10 @@ import Header from '../../layouts/Header';
 import SecAboutUs from './SecAboutUs';
 import SecAboutUsClient from './SecAboutUsClient';
 import SecAboutUsClientPeople from './SecAboutUsClientPeople';
-import SecDemoVideo from './SecDemoVideo';
+import SecOurRoadmap from './SecOurRoadmap';
 import SecOurServices from './SecOurServices';
 import SecPartners from './SecPartners';
 import SecTeam from './SecTeam';
-import SecTrust from './SecTrust';
 import SecWelcomeArea from './SecWelcomeArea';
 import SecVerticalSocial from './SecVerticalSocial';
 
@@ -53,14 +52,11 @@ const HomeDemo1: React.FC = () => {
       <div className="HomeDemo1">
         <SecWelcomeArea />
         <SecVerticalSocial data={VerticalSocial} />
-        <SecTrust data={SingleCoolFact} />
         <SecAboutUsClient img={HomeDemo1About1.src} />
         <SecAboutUs img={HomeDemo1Solution.src} />
         <SecAboutUsClientPeople img={HomeDemo1About1People.src} />
-        <div className="clearfix" />
-        <SecDemoVideo />
-        <div className="clearfix" />
         <SecOurServices data={service_single_content} />
+        <SecOurRoadmap data={timelineInfo} />
         <SecTeam data={TeamMember} />
         <SecPartners data={PartnersData} />
       </div>

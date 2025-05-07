@@ -114,7 +114,7 @@ _LEADERBOARDS = {
             ],
         ], # metrics (val, std)
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.Caco2_Wang ", "cm/s", "906", "Regression", "MAE", "Scaffold"]
+        ["tdc_ml.Caco2_Wang ", "cm/s", "906", "Regression", "MAE", "Scaffold"]
     ],
     "Bioavailability_Ma": [
         "old",
@@ -235,7 +235,7 @@ _LEADERBOARDS = {
             ],
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.Bioavailability_Ma" , "%", "640", "Binary", "AUROC", "Scaffold"],
+        ["tdc_ml.Bioavailability_Ma" , "%", "640", "Binary", "AUROC", "Scaffold"],
     ],
     "Lipophilicity_AstraZeneca": [
         "old",
@@ -356,7 +356,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.Lipophilicity_AstraZeneca", "log-ratio", "4,200", "Regression", "MAE", "Scaffold"]
+        ["tdc_ml.Lipophilicity_AstraZeneca", "log-ratio", "4,200", "Regression", "MAE", "Scaffold"]
     ],
     "Solubility_AqSolDB": [
         "old",
@@ -449,7 +449,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.Solubility_AqSolDB ", "log mol/L", "9,982", "Regression", "MAE", "Scaffold"]
+        ["tdc_ml.Solubility_AqSolDB ", "log mol/L", "9,982", "Regression", "MAE", "Scaffold"]
     ],
     "HIA_Hou": [
         "old",
@@ -549,7 +549,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.HIA_Hou ", "%", "578", "Binary", "AUROC", "Scaffold"]
+        ["tdc_ml.HIA_Hou ", "%", "578", "Binary", "AUROC", "Scaffold"]
     ],
     "Pgp_Broccatelli": [
         "old",
@@ -658,7 +658,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.Pgp_Broccatelli ", "%", "1,212", "Binary", "AUROC", "Scaffold"]
+        ["tdc_ml.Pgp_Broccatelli ", "%", "1,212", "Binary", "AUROC", "Scaffold"]
     ],
     "BBB_Martins": [
         "old",
@@ -760,7 +760,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.BBB_Martins ", "%", "1,975", "Binary", "AUROC", "Scaffold"]
+        ["tdc_ml.BBB_Martins ", "%", "1,975", "Binary", "AUROC", "Scaffold"]
     ],
     "PPBR_AZ": [
         "old",
@@ -869,7 +869,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.PPBR_AZ ", "%", "1,797", "Regression", "MAE", "Scaffold"]
+        ["tdc_ml.PPBR_AZ ", "%", "1,797", "Regression", "MAE", "Scaffold"]
     ],
     "VDss_Lombardo": [
         "old",
@@ -978,7 +978,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.VDss_Lombardo ", "L/kg", "1,130", "Regression", "Spearman", "Scaffold"]
+        ["tdc_ml.VDss_Lombardo ", "L/kg", "1,130", "Regression", "Spearman", "Scaffold"]
     ],
     "CYP2C9_Veith": [
         "old",
@@ -1089,7 +1089,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.CYP2C9_Veith ", "%", "12,092", "Binary", "AUPRC", "Scaffold"]
+        ["tdc_ml.CYP2C9_Veith ", "%", "12,092", "Binary", "AUPRC", "Scaffold"]
     ],
     "CYP2D6_Veith": [
         "old",
@@ -1200,7 +1200,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.CYP2D6_Veith ", "%", "13,130", "Binary", "AUPRC", "Scaffold"]
+        ["tdc_ml.CYP2D6_Veith ", "%", "13,130", "Binary", "AUPRC", "Scaffold"]
     ],
     "CYP3A4_Veith": [
         "old",
@@ -1302,7 +1302,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.CYP3A4_Veith ", "%", "12,328", "Binary", "AUPRC", "Scaffold"]
+        ["tdc_ml.CYP3A4_Veith ", "%", "12,328", "Binary", "AUPRC", "Scaffold"]
     ],
     "CYP2C9_Substrate_CarbonMangels": [
         "old",
@@ -1411,7 +1411,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.CYP2C9_Substrate_CarbonMangels ", "%", "666", "Binary", "AUPRC", "Scaffold"]
+        ["tdc_ml.CYP2C9_Substrate_CarbonMangels ", "%", "666", "Binary", "AUPRC", "Scaffold"]
     ],
     "CYP2D6_Substrate_CarbonMangels": [
         "old",
@@ -1516,7 +1516,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.CYP2D6_Substrate_CarbonMangels ", "%", "664", "Binary", "AUPRC", "Scaffold"]
+        ["tdc_ml.CYP2D6_Substrate_CarbonMangels ", "%", "664", "Binary", "AUPRC", "Scaffold"]
     ],
     "CYP3A4_Substrate_CarbonMangels": [
         "old",
@@ -1626,7 +1626,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.CYP3A4_Substrate_CarbonMangels ", "%", "667", "Binary", "AUROC", "Scaffold"]
+        ["tdc_ml.CYP3A4_Substrate_CarbonMangels ", "%", "667", "Binary", "AUROC", "Scaffold"]
     ],
     "Half_Life_Obach": [
         "old",
@@ -1733,7 +1733,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.Half_Life_Obach ", "hr", "667", "Regression", "Spearman", "Scaffold"]   
+        ["tdc_ml.Half_Life_Obach ", "hr", "667", "Regression", "Spearman", "Scaffold"]   
     ],
     "Clearance_Hepatocyte_AZ": [
         "old",
@@ -1840,7 +1840,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.Clearance_Hepatocyte_AZ ", "uL.min-1.(10^6 cells)-1", "1,020", "Regression", "Spearman", "Scaffold"]
+        ["tdc_ml.Clearance_Hepatocyte_AZ ", "uL.min-1.(10^6 cells)-1", "1,020", "Regression", "Spearman", "Scaffold"]
     ],
     "Clearance_Microsome_AZ": [
         "old",
@@ -1939,7 +1939,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.Clearance_Microsome_AZ ", "mL.min-1.g-1", "1,102", "Regression", "Spearman", "Scaffold"]
+        ["tdc_ml.Clearance_Microsome_AZ ", "mL.min-1.g-1", "1,102", "Regression", "Spearman", "Scaffold"]
     ],
     "LD50_Zhu": [
         "old",
@@ -2054,7 +2054,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.LD50_Zhu ", "log(1/(mol/kg))", "7,385", "Regression", "MAE", "Scaffold"]
+        ["tdc_ml.LD50_Zhu ", "log(1/(mol/kg))", "7,385", "Regression", "MAE", "Scaffold"]
     ],
     "hERG": [
         "old",
@@ -2161,7 +2161,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.hERG ", "%", "648", "Binary", "AUROC", "Scaffold"]
+        ["tdc_ml.hERG ", "%", "648", "Binary", "AUROC", "Scaffold"]
     ],
     "AMES": [
         "old",
@@ -2276,7 +2276,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.AMES ", "%", "7,255", "Binary", "AUROC", "Scaffold"]
+        ["tdc_ml.AMES ", "%", "7,255", "Binary", "AUROC", "Scaffold"]
     ],
     "DILI": [
         "old",
@@ -2383,7 +2383,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Dataset", "Unit", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.DILI ", "%", "475", "Binary", "AUROC", "Scaffold"]
+        ["tdc_ml.DILI ", "%", "475", "Binary", "AUROC", "Scaffold"]
     ],
     "DrugComb_HSA": [
         "old",
@@ -2402,7 +2402,7 @@ _LEADERBOARDS = {
             ]
         ],
         ["Label", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.DrugComb_HSA", "297,098", "Regression", "MAE", "Combination"],
+        ["tdc_ml.DrugComb_HSA", "297,098", "Regression", "MAE", "Combination"],
     ],
     "DrugComb_Loewe": [
         "old",
@@ -2421,7 +2421,7 @@ _LEADERBOARDS = {
             ],
         ],
         ["Label", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.DrugComb_Loewe", "297,098", "Regression", "MAE", "Combination"],
+        ["tdc_ml.DrugComb_Loewe", "297,098", "Regression", "MAE", "Combination"],
     ],
     "DrugComb_Bliss": [
         "old",
@@ -2440,7 +2440,7 @@ _LEADERBOARDS = {
             ],
         ],
         ["Label", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.DrugComb_Bliss", "297,098", "Regression", "MAE", "Combination"],
+        ["tdc_ml.DrugComb_Bliss", "297,098", "Regression", "MAE", "Combination"],
     ],
     "DrugComb_ZIP": [
         "old",
@@ -2459,7 +2459,7 @@ _LEADERBOARDS = {
             ],
         ],
         ["Label", "Size", "Task", "Metric", "Dataset Split"],
-        ["TDC.DrugComb_ZIP", "297,098", "Regression", "MAE", "Combination"],
+        ["tdc_ml.DrugComb_ZIP", "297,098", "Regression", "MAE", "Combination"],
         
     ],
     "BindingDB_Patent": [

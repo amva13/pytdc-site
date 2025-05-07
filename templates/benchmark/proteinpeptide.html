@@ -16,7 +16,7 @@
             <a href="/benchmark/proteinpeptide_group/overview" class=""><strong>Protein-Peptide Binding Affinity Group Leaderboard</strong></a>
             
                 {% for l in leaderboards %}
-                <li><a href="/benchmark/proteinpeptide_group/{{l}}" class=""><code>TDC.{{l}}</code> Leaderboard</a></li>
+                <li><a href="/benchmark/proteinpeptide_group/{{l}}" class=""><code>tdc_ml.{{l}}</code> Leaderboard</a></li>
                 {% endfor %}
             
         </li>
@@ -64,17 +64,17 @@
 <div class="content">
     <h2 id="protein-peptide-interaction-benchmark-group-tcr-epitope">Protein-Peptide Interaction Benchmark Group (+TCR-Epitope)</h2>
 
-<p class="is-size-5">TDC-2 introduces the Protein-Peptide Binding Affinity prediction task. The predictive, non-generative task is to learn a model estimating a function of a protein, peptide, antigen processing pathway, biological context, and interaction features. It outputs a binding affinity value or binary label indicating strong or weak binding. The binary label can also include additional biomarkers, such as allowing for a positive label if and only if the binding interaction is specific. 
+<p class="is-size-5">PyTDC introduces the Protein-Peptide Binding Affinity prediction task. The predictive, non-generative task is to learn a model estimating a function of a protein, peptide, antigen processing pathway, biological context, and interaction features. It outputs a binding affinity value or binary label indicating strong or weak binding. The binary label can also include additional biomarkers, such as allowing for a positive label if and only if the binding interaction is specific. 
   <br />
   To account for additional biomarkers beyond binding affinity value, our task is specified with a binary label.
 <br />
-TDC-2 provides datasets and benchmarks for a generalized protein-peptide binding interaction prediction task and a TCR-Epitope binding interaction prediction task.</p>
+PyTDC provides datasets and benchmarks for a generalized protein-peptide binding interaction prediction task and a TCR-Epitope binding interaction prediction task.</p>
 
 <p class="is-size-5"></p>
 
 <p class="is-size-5">To access a generalized protein-peptide benchmark in the group, use the following code:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group.protein_peptide_group</span> <span class="kn">import</span> <span class="n">ProteinPeptideGroup</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.benchmark_group.protein_peptide_group</span> <span class="kn">import</span> <span class="n">ProteinPeptideGroup</span>
 <span class="n">group</span> <span class="o">=</span> <span class="n">ProteinPeptideGroup</span><span class="p">()</span>
 <span class="n">train</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get_train_valid_split</span><span class="p">()</span> <span class="c1"># val dataset will be empty. use the train dataset if fine-tuning desired.
 </span><span class="n">test</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get_test</span><span class="p">()</span>
@@ -87,7 +87,7 @@ TDC-2 provides datasets and benchmarks for a generalized protein-peptide binding
 
 <p class="is-size-5">To access a TCR-Epitope benchmark in the group, use the following code:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group.protein_peptide_group</span> <span class="kn">import</span> <span class="n">ProteinPeptideGroup</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.benchmark_group.protein_peptide_group</span> <span class="kn">import</span> <span class="n">ProteinPeptideGroup</span>
 <span class="n">group</span> <span class="o">=</span> <span class="n">TCREpitopeGroup</span><span class="p">()</span>
 <span class="n">train</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get_train_valid_split</span><span class="p">()</span> 
 <span class="n">test</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get_test</span><span class="p">()</span>

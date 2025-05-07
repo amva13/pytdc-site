@@ -38,7 +38,7 @@
 
 <p class="is-size-5"> Suppose you want to evaluate your model on the <code>Caco2_Wang</code> benchmark that belongs to the <code>ADMET_Group</code> benchmark group. Take the following code and replace the commented line block with the code to train your model. The <code>train</code>, <code>valid</code>, <code>test</code> variables contain the split of the benchmark dataset. </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group</span> <span class="kn">import</span> <span class="n">admet_group</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.benchmark_group</span> <span class="kn">import</span> <span class="n">admet_group</span>
 <span class="n">group</span> <span class="o">=</span> <span class="n">admet_group</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">'data/'</span><span class="p">)</span>
 <span class="n">predictions_list</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -77,7 +77,7 @@
 
 <p class="is-size-5"> The <code>BenchmarkGroup</code> class is a wrapper class that provides utility functions for benchmarking. For each benchmark, TDC provides a separate <code>test</code> set and a <code>train_val</code> set. </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group</span> <span class="kn">import</span> <span class="n">admet_group</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.benchmark_group</span> <span class="kn">import</span> <span class="n">admet_group</span>
 <span class="n">group</span> <span class="o">=</span> <span class="n">admet_group</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">'data/'</span><span class="p">)</span>
 <span class="n">benchmark</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Caco2_Wang'</span><span class="p">)</span>
 
@@ -99,7 +99,7 @@
 
 <p class="is-size-5"> Importantly, you must evaluate your model on the test set as specified by TDC to ensure fair comparison of models. To promote robust measurement of model performance, TDC requires at minimum five independent runs of the model to calculate average performance and standard deviation. Following is an example showing how to obtain five different train and validation splits: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group</span> <span class="kn">import</span> <span class="n">admet_group</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.benchmark_group</span> <span class="kn">import</span> <span class="n">admet_group</span>
 <span class="n">group</span> <span class="o">=</span> <span class="n">admet_group</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">'data/'</span><span class="p">)</span>
 <span class="n">predictions_list</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -129,7 +129,7 @@
 </span></code></pre></div></div>
 <p class="is-size-5"> Alternatively, the same can be achieved via: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group</span> <span class="kn">import</span> <span class="n">admet_group</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.benchmark_group</span> <span class="kn">import</span> <span class="n">admet_group</span>
 <span class="n">group</span> <span class="o">=</span> <span class="n">admet_group</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">'data/'</span><span class="p">)</span>
 <span class="n">group</span><span class="p">.</span><span class="n">dataset_names</span>
 <span class="c1"># ['caco2_wang', 'hia_hou', ....]
@@ -137,7 +137,7 @@
 
 <p class="is-size-5"> For every benchmark group, we provide multiple benchmarks that all instantiate the same learning task. We encourage you to submit results for the entire benchmark group; however, we also accept submissions reporting performance on just one benchmark in the group. To access all benchmarks in a group, TDC provides the following helper function:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group</span> <span class="kn">import</span> <span class="n">admet_group</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.benchmark_group</span> <span class="kn">import</span> <span class="n">admet_group</span>
 <span class="n">group</span> <span class="o">=</span> <span class="n">admet_group</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">'data/'</span><span class="p">)</span>
 <span class="n">predictions_list</span> <span class="o">=</span> <span class="p">[]</span>
 

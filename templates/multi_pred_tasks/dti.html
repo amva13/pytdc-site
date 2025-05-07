@@ -168,7 +168,7 @@ Models require extrapolation on unseen compounds, unseen proteins, and unseen co
 
 <p class="is-size-6"> <strong>Tips:</strong> Transforming to log-scale pIC50, pKi, and pKd can usually lead to more stable training. You can achieve this transformation via <a href="/functions/data_process#label-units-conversion">here</a>. Checkout the <a href="/functions/data_process">data processing</a> page for binarization, label distribution visualization, edge list/DGL/PyTorch graph transformation. </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">DTI</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'BindingDB_Kd'</span><span class="p">)</span>
 <span class="c1"># data = DTI(name = 'BindingDB_IC50')
 # data = DTI(name = 'BindingDB_Ki')
@@ -177,7 +177,7 @@ Models require extrapolation on unseen compounds, unseen proteins, and unseen co
 
 <p class="is-size-6"><strong>Note:</strong> Many DTI pairs have same sequence information but different binding affinities due to different experimental assays. To harmonize them, you can use the below function to retrieve either the maximum affinity or the mean for the duplicated pair:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">DTI</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'BindingDB_Kd'</span><span class="p">)</span>
 <span class="n">data</span><span class="p">.</span><span class="n">harmonize_affinities</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="s">'max_affinity'</span><span class="p">)</span>
 <span class="c1"># data.harmonize_affinities(mode = 'mean')
@@ -205,7 +205,7 @@ Models require extrapolation on unseen compounds, unseen proteins, and unseen co
 
 <p class="is-size-6"> <strong>Tips:</strong> Transforming to log-scale pIC50, pKi, and pKd can usually lead to more stable training. You can achieve this transformation via <a href="/functions/data_process#label-units-conversion">here</a>. Checkout the <a href="/functions/data_process">data processing</a> page for binarization, label distribution visualization, edge list/DGL/PyTorch graph transformation. </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">DTI</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'DAVIS'</span><span class="p">)</span>
 <span class="n">split</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">get_split</span><span class="p">()</span>
 </code></pre></div></div>
@@ -232,7 +232,7 @@ Models require extrapolation on unseen compounds, unseen proteins, and unseen co
 
 <p class="is-size-6"> <strong>Tips:</strong> Checkout the <a href="/functions/data_process">data processing</a> page for binarization, label distribution visualization, edge list/DGL/PyTorch graph transformation. </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">DTI</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'KIBA'</span><span class="p">)</span>
 <span class="n">split</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">get_split</span><span class="p">()</span>
 </code></pre></div></div>

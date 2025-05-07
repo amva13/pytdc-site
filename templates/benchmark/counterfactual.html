@@ -17,7 +17,7 @@
             
             <ul>
                 {% for l in leaderboards %}
-                <li><a href="/benchmark/counterfactual_group/{{l}}" class=""><code>TDC.{{l}}</code> Leaderboard</a></li>
+                <li><a href="/benchmark/counterfactual_group/{{l}}" class=""><code>tdc_ml.{{l}}</code> Leaderboard</a></li>
                 {% endfor %}    
             </ul>
             
@@ -78,11 +78,11 @@ predictive, non-generative task is then formalized as a function of a cell, with
 such as cell line, disease, and tissue, and a perturbation, such as a drug type or a CRISPR-based
 perturbation, which outputs a count for gene expression of the cell after the input pe </p>
 
-<p class="is-size-5">In TDC-2, we’ve used the scPerturb datasets for building benchmarks for this task. More details to-be-announced. </p>
+<p class="is-size-5">In PyTDC, we’ve used the scPerturb datasets for building benchmarks for this task. More details to-be-announced. </p>
 
 <p class="is-size-5">To access a benchmark in the group, use the following code:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.benchmark_group</span> <span class="kn">import</span> <span class="n">counterfactual_group</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.benchmark_group</span> <span class="kn">import</span> <span class="n">counterfactual_group</span>
 <span class="n">group</span> <span class="o">=</span> <span class="n">counterfactual_group</span><span class="p">.</span><span class="n">CounterfactualGroup</span><span class="p">()</span> <span class="c1"># GenePerturbGroup for genetic perturbations
 </span><span class="n">train</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get_train_valid_split</span><span class="p">()</span>
 <span class="n">test</span> <span class="o">=</span> <span class="n">group</span><span class="p">.</span><span class="n">get_test</span><span class="p">()</span>

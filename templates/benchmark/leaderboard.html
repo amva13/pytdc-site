@@ -18,7 +18,7 @@
             <ul>
                 
                 {% for lb in leaderboards %}
-                <li><a href="/benchmark/{{ group }}/{{ lb }}"><code>TDC.{{ lb }}</code> Leaderboard </a></li>
+                <li><a href="/benchmark/{{ group }}/{{ lb }}"><code>tdc_ml.{{ lb }}</code> Leaderboard </a></li>
                 {% endfor %}
                 
             </ul>
@@ -62,7 +62,7 @@
                     
                     
 <div class="content">
-    <p class="is-size-3"><b><code>TDC.{{ leaderboard }}</code> Leaderboard</b></p>
+    <p class="is-size-3"><b><code>tdc_ml.{{ leaderboard }}</code> Leaderboard</b></p>
 
 {% if style=="old" %}
 <h3 id="dataset-summary">Dataset Summary</h3>

@@ -124,14 +124,14 @@ _DESC = {
     "scdti": [
         "single-cell-drug-target-nomination-identification-task-overview",
         "Single-cell Drug-Target Nomination (Identification) Task Overview",
-        " TDC-2 introduces TDC.scDTI task. The goal is to train a model for predicting the probability that a protein is a candidate\
+        " PyTDC introduces tdc_ml.scDTI task. The goal is to train a model for predicting the probability that a protein is a candidate\
             therapeutic target in a specific cell type. The model learns an estimator for a function of a protein target and a \
                 cell-type-specific biological context as input, and the model is tasked to predict the probability the candidate \
                     protein is a therapeutic target in that cell type.",
         "Single-cell data have enabled the study of gene expression and function at the level of individual cells across healthy\
             and disease states. To facilitate biological discoveries using single-cell data, machine-learning models have been \
                 developed to capture the complex, cell-type-specific behavior of genes. In addition to providing the single-cell\
-                    measurements and foundation models, TDC-2 supports the development of contextual AI models to nominate \
+                    measurements and foundation models, PyTDC supports the development of contextual AI models to nominate \
                         therapeutic targets in a cell type-specific manner.",
         "Models are expected to have strong performance on cell-context-specific evaluation metrics across different sets of \
             disease-specific proteins and cells. ",

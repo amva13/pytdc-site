@@ -194,11 +194,11 @@ askcos(smiles, host_ip, output='plausibility', save_json=False, file_name='tree_
 <p class="is-size-6">  <strong> Installation instruction: </strong>  </p>
 
 <ul>
-        <li>Create an account at <a href="https://tdc.molecule.one/"> tdc.molecule.one</a>. Grab the API Token in your profile page.</li>
+        <li>Create an account at <a href="https://tdc_ml.molecule.one/"> tdc_ml.molecule.one</a>. Grab the API Token in your profile page.</li>
         <li>Install molecule.one by <code>pip install git+https://github.com/molecule-one/m1wrapper-python</code></li>
 </ul>
 
-<p class="is-size-6"> <strong>Important Note:</strong> The use of Molecule.one software provided at tdc.molecule.one is permitted only for non-commercial use in connection with evaluation on the datasets provided by the TDC benchmark. To evaluate your molecules you need to register an account on tdc.molecule.one and accept provided terms and conditions. After registering the account, please write to stan@molecule.one a request to activate it with a brief description of the intended use. </p>
+<p class="is-size-6"> <strong>Important Note:</strong> The use of Molecule.one software provided at tdc_ml.molecule.one is permitted only for non-commercial use in connection with evaluation on the datasets provided by the TDC benchmark. To evaluate your molecules you need to register an account on tdc_ml.molecule.one and accept provided terms and conditions. After registering the account, please write to stan@molecule.one a request to activate it with a brief description of the intended use. </p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc</span> <span class="kn">import</span> <span class="n">Oracle</span>
 <span class="n">m1</span> <span class="o">=</span> <span class="n">Oracle</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'Molecule One Synthesis'</span><span class="p">,</span> <span class="n">api_token</span> <span class="o">=</span> <span class="s">'XXXXX'</span><span class="p">)</span>

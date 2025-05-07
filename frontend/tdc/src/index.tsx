@@ -16,11 +16,11 @@ const Home: React.FC = () => {
     <>
       {/* Head component for metadata */}
       <Head>
-        <meta property="og:title" content="PyTDC: The Commons" />
+        <meta property="og:title" content="PyTDC: Next-gen biomedical ML platform. Built over Therapeutic Data Commons" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tdcommons.ai" />
+        <meta property="og:url" content="https://pytdc.apliko.io" />
         {/* Uncomment and provide a valid image URL if needed */}
-        {/* <meta property="og:image" content="mymainimage.jpg" /> */}
+        <meta property="og:image" content="/assets/img/pytdc_logo.png" />
       </Head>
 
       {/* Main App Component */}

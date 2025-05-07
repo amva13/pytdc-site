@@ -30,7 +30,7 @@ _PUBLICATIONS = [
         }
     ),
     HomepagePublication(
-        "TDC-2: Multimodal Foundation for Therapeutic Science",
+        "PyTDC: Multimodal Foundation for Therapeutic Science",
         "Molecular Machine Learning Conference (MoML2024). Hosted at Mila Agora on June 19th",
         2024,
         6,

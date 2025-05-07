@@ -18,7 +18,7 @@
             <ul>
                 
                 {% for l in leaderboards %}
-                <li><a href="/benchmark/dti_dg_group/{{l}}" class=""><code>TDC.{{l}}</code> Leaderboard</a></li>
+                <li><a href="/benchmark/dti_dg_group/{{l}}" class=""><code>tdc_ml.{{l}}</code> Leaderboard</a></li>
                 {% endfor %} 
                 
             </ul>
@@ -66,7 +66,7 @@
 
 <p class="is-size-5">Drug-target interactions (DTI) characterize the binding of compounds to disease targets. Identifying high-affinity compounds is the first crucial step for drug discovery. Recent ML models have shown strong performances in DTI prediction, but they adopt a random dataset splitting where testing sets contain unseen pair of compound-target, but both of the compounds and targets are seen. However, pharmaceutical companies develop compound screening campaigns for novel targets or screen a novel class of compounds for known targets. These novel compounds and targets shift over the years. Thus, it requires a DTI ML model to achieve consistent performances to the subtle domain shifts along the temporal dimension. </p>
 
-<p class="is-size-5">In this benchmark, we use DTIs in TDC.BindingDB that have patent information. Specifically, we formulate each domain consisting of DTIs that are patented in a specific year. We test various domain generalization methods to predict out-of-distribution DTIs in 2019-2021 after training on 2013-2018 DTIs, simulating the realistic scenario. </p>
+<p class="is-size-5">In this benchmark, we use DTIs in tdc_ml.BindingDB that have patent information. Specifically, we formulate each domain consisting of DTIs that are patented in a specific year. We test various domain generalization methods to predict out-of-distribution DTIs in 2019-2021 after training on 2013-2018 DTIs, simulating the realistic scenario. </p>
 
 <p class="is-size-5">To access a benchmark in the group, use the following code:</p>
 

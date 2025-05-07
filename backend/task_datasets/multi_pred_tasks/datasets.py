@@ -187,7 +187,7 @@ _META = {
                                         deemed druggable if targeted by at least one existing drug. We extract drugs and their \
                                             nominal targets from Drugbank. We retain negative training examples activated in at \
                                                 least one cell type-specific protein interaction network. Note: to get the exact cell-type-specific \
-                                                    data and labels used in the PINNACLE paper, please refer to the TDC.scDTI benchmark group.",
+                                                    data and labels used in the PINNACLE paper, please refer to the tdc_ml.scDTI benchmark group.",
         "Classification. Given the protein and cell-context, predict whether the protein is a therapeutic target. ",
         "The final number of positive (negative) samples for RA and IBD were 152 (1,465) and 114 (1,377), respectively. In PINNACLE,\
             this dataset was augmented to include 156 cell types.",

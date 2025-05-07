@@ -87,7 +87,7 @@
 	<li><code>dst</code>: destination molecule format. For 2D, choose from SMILES/SELFIES/Graph2D/PyG/DGL/ECFP2/ECFP4/ECFP6/MACCS/Daylight/RDKit2D/Morgan/PubChem. For 3D, choose from SMILES/SELFIES/Graph3D/Columb.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.chem_utils</span> <span class="kn">import</span> <span class="n">MolConvert</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.chem_utils</span> <span class="kn">import</span> <span class="n">MolConvert</span>
 <span class="n">converter</span> <span class="o">=</span> <span class="n">MolConvert</span><span class="p">(</span><span class="n">src</span> <span class="o">=</span> <span class="s">'SMILES'</span><span class="p">,</span> <span class="n">dst</span> <span class="o">=</span> <span class="s">'Graph2D'</span><span class="p">)</span>
 <span class="n">converter</span><span class="p">([</span><span class="s">'Clc1ccccc1C2C(=C(/N/C(=C2/C(=O)OCC)COCCN)C)\C(=O)OC'</span><span class="p">,</span>
        <span class="s">'CCCOc1cc2ncnc(Nc3ccc4ncsc4c3)c2cc1S(=O)(=O)C(C)(C)C'</span><span class="p">])</span>
@@ -95,13 +95,13 @@
 
 <p class="is-size-6"> <strong>Note</strong>: to check the eligible destination format for each source type, you can type: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.chem_utils</span> <span class="kn">import</span> <span class="n">MolConvert</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.chem_utils</span> <span class="kn">import</span> <span class="n">MolConvert</span>
 <span class="n">MolConvert</span><span class="p">.</span><span class="n">eligible_format</span><span class="p">()</span>
 <span class="c1"># MolConvert.eligible_format(src = 'SDF') for specific source type
 </span></code></pre></div></div>
 <p class="is-size-6"> While for 3D the destination format does not include most of 2D ones, you can also easily convert to any 2D format by: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.chem_utils</span> <span class="kn">import</span> <span class="n">MolConvert</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.chem_utils</span> <span class="kn">import</span> <span class="n">MolConvert</span>
 <span class="n">convert</span> <span class="o">=</span> <span class="n">MolConvert</span><span class="p">(</span><span class="n">src</span> <span class="o">=</span> <span class="s">'SDF'</span><span class="p">,</span> <span class="n">dst</span> <span class="o">=</span> <span class="s">'SMILES'</span><span class="p">)</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">convert</span><span class="p">(</span><span class="s">'XXX/.sdf'</span><span class="p">)</span>
 <span class="n">convert2d</span> <span class="o">=</span> <span class="n">MolConvert</span><span class="p">(</span><span class="n">src</span> <span class="o">=</span> <span class="s">'SMILES'</span><span class="p">,</span> <span class="n">dst</span> <span class="o">=</span> <span class="s">'ECFP4'</span><span class="p">)</span>
@@ -121,7 +121,7 @@
 	<li><code>HBA, HBD, LogP, MW, Rot, TPSA</code>: A set of real valued property filters. Default is HBA = [0, 10], HBD = [0, 5], LogP = [-5, 5], MW = [0, 500], Rot = [0, 10], TPSA = [0, 200]. </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.chem_utils</span> <span class="kn">import</span> <span class="n">MolFilter</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.chem_utils</span> <span class="kn">import</span> <span class="n">MolFilter</span>
 <span class="n">filters</span> <span class="o">=</span> <span class="n">MolFilter</span><span class="p">(</span><span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="s">'PAINS'</span><span class="p">],</span> <span class="n">HBD</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="n">filters</span><span class="p">([</span><span class="s">'CCSc1ccccc1C(=O)Nc1onc2c1CCC2'</span><span class="p">])</span>
 </code></pre></div></div>
@@ -134,7 +134,7 @@
 
 <p class="is-size-6"> For example, to visualize the Caco-2 label distribution: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.single_pred</span> <span class="kn">import</span> <span class="n">ADME</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.single_pred</span> <span class="kn">import</span> <span class="n">ADME</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">ADME</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'Caco2_Wang'</span><span class="p">)</span>
 <span class="n">data</span><span class="p">.</span><span class="n">label_distribution</span><span class="p">()</span>
 </code></pre></div></div>
@@ -152,7 +152,7 @@
 
 <p class="is-size-6"> For example, we show how to binarize the DAVIS dataset in the DTI task. Since the binding affinity is the lower the better, we want to set values that are below 30 to be 1 and others 0: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">DTI</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'DAVIS'</span><span class="p">)</span>
 <span class="n">data</span><span class="p">.</span><span class="n">binarize</span><span class="p">(</span><span class="n">threshold</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="s">'descending'</span><span class="p">)</span>
 </code></pre></div></div>
@@ -167,7 +167,7 @@
 
 <p class="is-size-6"> For example, to convert from nM to p: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">DTI</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'DAVIS'</span><span class="p">)</span>
 <span class="n">data</span><span class="p">.</span><span class="n">convert_to_log</span><span class="p">(</span><span class="n">form</span> <span class="o">=</span> <span class="s">'binding'</span><span class="p">)</span>
 <span class="c1"># convert back: data.convert_from_log(form = 'binding')
@@ -175,7 +175,7 @@
 
 <p class="is-size-6">To convert to natural log scale:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.single_pred</span> <span class="kn">import</span> <span class="n">ADME</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.single_pred</span> <span class="kn">import</span> <span class="n">ADME</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">ADME</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'Caco2_Wang'</span><span class="p">)</span>
 <span class="n">data</span><span class="p">.</span><span class="n">convert_to_log</span><span class="p">(</span><span class="n">form</span> <span class="o">=</span> <span class="s">'standard'</span><span class="p">)</span>
 <span class="c1"># convert back: data.convert_from_log(form = 'standard')
@@ -189,8 +189,8 @@
 
 <p class="is-size-6"> For example, to obtain what interaction type between DDIs: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">DDI</span>
-<span class="kn">from</span> <span class="nn">tdc.utils</span> <span class="kn">import</span> <span class="n">get_label_map</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">DDI</span>
+<span class="kn">from</span> <span class="nn">tdc_ml.utils</span> <span class="kn">import</span> <span class="n">get_label_map</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">DDI</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'DrugBank'</span><span class="p">)</span>
 <span class="n">get_label_map</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'DrugBank'</span><span class="p">,</span> <span class="n">task</span> <span class="o">=</span> <span class="s">'DDI'</span><span class="p">)</span>
 </code></pre></div></div>
@@ -201,7 +201,7 @@
 
 <p class="is-size-6">  <strong> Function Description: </strong> This function prints the basic statistics of the dataset, such as number of data points. </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">GDA</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">GDA</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">GDA</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'DisGeNET'</span><span class="p">)</span>
 <span class="n">data</span><span class="p">.</span><span class="n">print_stats</span><span class="p">()</span>
 </code></pre></div></div>
@@ -219,7 +219,7 @@
 
 <p class="is-size-6"> For example, SARS-CoV2 3CL Protease screening data is highly imbalanced, we want to oversample the positive class: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.single_pred</span> <span class="kn">import</span> <span class="n">HTS</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.single_pred</span> <span class="kn">import</span> <span class="n">HTS</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">HTS</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'SARSCoV2_3CLPro_Diamond'</span><span class="p">)</span>
 <span class="n">data</span><span class="p">.</span><span class="n">balanced</span><span class="p">(</span><span class="n">oversample</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
 </code></pre></div></div>
@@ -241,7 +241,7 @@
 
 <p class="is-size-6"> For example, to construct a graph for DTI DAVIS dataset with threshold 30, split set to true, fraction 70%/10%/20%, seed 42, and descending order: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">DTI</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">DTI</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'DAVIS'</span><span class="p">)</span>
 <span class="n">data</span><span class="p">.</span><span class="n">to_graph</span><span class="p">(</span><span class="n">threshold</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s">'edge_list'</span><span class="p">,</span> <span class="n">split</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">frac</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="s">'descending'</span><span class="p">)</span>
 <span class="c1"># output: {'edge_list': array of shape (X, 2), 'neg_edges': array of shape (X, 2), 'split': {'train': df, 'valid': df, 'test': df}}
@@ -265,7 +265,7 @@
 
 <p class="is-size-6"> For example, HuRI dataset from PPI only consists of positive data points. We can obtain a new dataset with negative samples by: </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">PPI</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">PPI</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">PPI</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'HuRI'</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">neg_sample</span><span class="p">(</span><span class="n">frac</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div></div>
@@ -282,7 +282,7 @@
 
 <p class="is-size-6">  <strong> Note: </strong> For large batch of queries, please use the <a href="https://pubchem.ncbi.nlm.nih.gov/idexchange/idexchange.cgi">PubChem ID exchange service</a>. </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.utils</span> <span class="kn">import</span> <span class="n">cid2smiles</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.utils</span> <span class="kn">import</span> <span class="n">cid2smiles</span>
 <span class="n">smiles</span> <span class="o">=</span> <span class="n">cid2smiles</span><span class="p">(</span><span class="mi">2248631</span><span class="p">)</span>
 <span class="c1"># 'CCOC1=CC(=C(C=C1C=CC(=O)O)Br)OCC'
 </span></code></pre></div></div>
@@ -299,7 +299,7 @@
 
 <p class="is-size-6">  <strong> Note: </strong> For large batch of queries, please use the <a href="https://www.uniprot.org/uploadlists/">Uniprot ID mapping service</a>. </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.utils</span> <span class="kn">import</span> <span class="n">uniprot2seq</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.utils</span> <span class="kn">import</span> <span class="n">uniprot2seq</span>
 <span class="n">seq</span> <span class="o">=</span> <span class="n">uniprot2seq</span><span class="p">(</span><span class="s">'P49122'</span><span class="p">)</span>
 <span class="c1"># 'MKTLLLTLVVVTIVCLDLGYTLKCHNTQLPFIYNTCPEGKNLCFKATLKFPLKFPVKRGCAATCPRSSSLVKVVCCKTDKCN'
 </span></code></pre></div></div>

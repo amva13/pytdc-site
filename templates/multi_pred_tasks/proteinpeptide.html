@@ -146,7 +146,7 @@ Machine learning models can rapidly predict binding affinities between proteins 
 </p>
 
 <p class="is-size-6"> <strong> Generalization: </strong> 
-There is generally less experimental data available for protein-peptide interactions compared to protein-protein interactions, which hampers the development and validation of predictive models (Chang &amp; Perez, 2022). Capturing the dynamic nature of protein-peptide interactions requires advanced sampling techniques and computational resources, making the prediction of binding affinities more complex (Antes et al., 2014). TDC-2 provides benchmarks integrating newly discovered peptides to test ML models on their ability to generalize to cutting-edge peptidomimetics.
+There is generally less experimental data available for protein-peptide interactions compared to protein-protein interactions, which hampers the development and validation of predictive models (Chang &amp; Perez, 2022). Capturing the dynamic nature of protein-peptide interactions requires advanced sampling techniques and computational resources, making the prediction of binding affinities more complex (Antes et al., 2014). PyTDC provides benchmarks integrating newly discovered peptides to test ML models on their ability to generalize to cutting-edge peptidomimetics.
 </p>
 
 <p class="is-size-6"> <strong> Product: </strong>  biopharmaceuticals</p>
@@ -164,7 +164,7 @@ There is generally less experimental data available for protein-peptide interact
 
 <p class="is-size-6">  <strong> Dataset Split: </strong> <span class="tag is-info is-light">Random Split (stratified)</span> </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.multi_pred</span> <span class="kn">import</span> <span class="n">ProteinPeptide</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.multi_pred</span> <span class="kn">import</span> <span class="n">ProteinPeptide</span> 
 <span class="n">data</span> <span class="o">=</span> <span class="n">ProteinPeptide</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'brown_mdm2_ace2_12ca5'</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="s">'./data'</span><span class="p">)</span>
 <span class="n">split</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">get_split</span><span class="p">()</span>
 </code></pre></div></div>

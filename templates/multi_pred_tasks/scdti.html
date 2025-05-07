@@ -135,11 +135,11 @@
 	
 
 <p class="is-size-6">  <strong> Definition: </strong> 
-TDC-2 introduces TDC.scDTI task. The goal is to train a model for predicting the probability that a protein is a candidate therapeutic target in a specific cell type. The model learns an estimator for a function of a protein target and a cell-type-specific biological context as input, and the model is tasked to predict the probability the candidate protein is a therapeutic target in that cell type. 
+PyTDC introduces tdc_ml.scDTI task. The goal is to train a model for predicting the probability that a protein is a candidate therapeutic target in a specific cell type. The model learns an estimator for a function of a protein target and a cell-type-specific biological context as input, and the model is tasked to predict the probability the candidate protein is a therapeutic target in that cell type. 
 </p>
 
 <p class="is-size-6"> <strong> Impact: </strong>  
-Single-cell data have enabled the study of gene expression and function at the level of individual cells across healthy and disease states. To facilitate biological discoveries using single-cell data, machine-learning models have been developed to capture the complex, cell-type-specific behavior of genes. In addition to providing the single-cell measurements and foundation models, TDC-2 supports the development of contextual AI models to nominate therapeutic targets in a cell type-specific manner.
+Single-cell data have enabled the study of gene expression and function at the level of individual cells across healthy and disease states. To facilitate biological discoveries using single-cell data, machine-learning models have been developed to capture the complex, cell-type-specific behavior of genes. In addition to providing the single-cell measurements and foundation models, PyTDC supports the development of contextual AI models to nominate therapeutic targets in a cell type-specific manner.
 </p>
 
 <p class="is-size-6"> <strong> Generalization: </strong> 
@@ -162,7 +162,7 @@ Models are expected to have strong performance on cell-context-specific evaluati
 
 <p class="is-size-6">  <strong> Dataset Split: </strong> <span class="tag is-info is-light">Cold Protein Split</span> We split the dataset such that about 80% of the proteins are in the training set, about 10% of the proteins are in the validation set, and about 10% of the proteins are in the test set. The data splits are consistent for each cell type context to avoid data leakage.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.resource.dataloader</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.resource.dataloader</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"opentargets_dti"</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">get_data</span><span class="p">()</span>
 </code></pre></div></div>

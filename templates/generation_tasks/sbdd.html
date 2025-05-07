@@ -122,7 +122,7 @@ The generated molecules have to obtain superior properties given a range of high
 
 <p class="is-size-6">  <strong> Dataset Split: </strong> <span class="tag is-info is-light">Random Split</span> </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.generation</span> <span class="kn">import</span> <span class="n">SBDD</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.generation</span> <span class="kn">import</span> <span class="n">SBDD</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">SBDD</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'PDBBind'</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s">'./pdbbind'</span><span class="p">)</span>
 <span class="n">split</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">get_split</span><span class="p">()</span>
 </code></pre></div></div>
@@ -147,7 +147,7 @@ The generated molecules have to obtain superior properties given a range of high
 
 <p class="is-size-6">  <strong> Dataset Split: </strong> <span class="tag is-info is-light">Random Split</span> </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.generation</span> <span class="kn">import</span> <span class="n">SBDD</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.generation</span> <span class="kn">import</span> <span class="n">SBDD</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">SBDD</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'dude'</span><span class="p">)</span>
 <span class="n">split</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">get_split</span><span class="p">()</span>
 </code></pre></div></div>
@@ -170,7 +170,7 @@ The generated molecules have to obtain superior properties given a range of high
 
 <p class="is-size-6">  <strong> Dataset Split: </strong> <span class="tag is-info is-light">Random Split</span> </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc.generation</span> <span class="kn">import</span> <span class="n">SBDD</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tdc_ml.generation</span> <span class="kn">import</span> <span class="n">SBDD</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">SBDD</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'scPDB'</span><span class="p">)</span>
 <span class="n">split</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">get_split</span><span class="p">()</span>
 </code></pre></div></div>
@@ -198,7 +198,7 @@ The generated molecules have to obtain superior properties given a range of high
 <p class='is-size-6'>  <strong> Dataset Split: </strong> <span class="tag is-info is-light">Random Split</span> </p>
 
 ``` python
-from tdc.generation import SBDD
+from tdc_ml.generation import SBDD
 data = SBDD(name='crossdock')
 split = data.get_split()
 ```

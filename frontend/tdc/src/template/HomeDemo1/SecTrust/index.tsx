@@ -17,8 +17,8 @@ const SecTrust: React.FC<SecTrustProps> = ({ data }) => {
   return (
     <section className="trust-section section-padding-100">
       <SectionHeading
-        title="TDC-2 Talks"
-        text="Seminars and presentations sharing the new tasks and architecture of TDC-2."
+        title="PyTDC Talks"
+        text="Seminars and presentations sharing the new tasks and architecture of PyTDC."
       />
 
       <div className="container">
