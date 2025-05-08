@@ -32,6 +32,51 @@
   gtag('js', new Date());
   gtag('config', 'UA-183522810-1');
 </script>
+<!-- Code formatting -->
+<link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+<style>
+    pre {
+      background-color: #282c34;
+      color: #abb2bf;
+      padding: 1em;
+      overflow-x: auto;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+    }
+    .keyword    { color: #c678dd; font-weight: bold; }
+    .builtin    { color: #61afef; }
+    .string     { color: #98c379; }
+    .comment    { color: #5c6370; font-style: italic; }
+    .function   { color: #e5c07b; }
+    pre code .token.number {
+        all: unset;
+        color: #d19a66; /* or your desired color */
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+    }
+
+    .token.number,
+    .token.number * {
+        background: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        color: #d19a66 !important; /* or whatever color you want for numbers */
+    }
+    pre code .token.number::before,
+    pre code .token.number::after {
+        content: none !important;
+        background: none !important;
+        display: none !important;
+    }
+
+</style>
+
 </head>
 {% endblock %}
 
@@ -195,7 +240,27 @@
 </footer>
 {% endblock %}
 {% block scripts %}
-<script src="/scripts/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all "navbar-burger" elements
+        const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+        // Check if there are any navbar burgers
+        if (navbarBurgers.length > 0) {
+            navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+    
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+        }
+    });
+    </script>
+    
 {% endblock %}
 </body>
 </html>

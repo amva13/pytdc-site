@@ -14,6 +14,90 @@
 <div class="content">
     <h1 id="introduction">Introduction</h1>
 
+    <div class="container">
+        <div class="columns is-vcentered">
+            <div>
+                  <p class="is-size-5">
+                    Existing biomedical benchmarks do not provide end-to-end infrastructure for training, evaluation, and inference of models that integrate multimodal biological data and a broad range of machine learning tasks in therapeutics. We present PyTDC, an open-source machine-learning platform providing streamlined training, evaluation, and inference software for multimodal biological AI models. PyTDC unifies distributed, heterogeneous, continuously updated data sources and model weights and standardizes benchmarking and inference endpoints.
+                    </p>
+                    <p class="is-size-5">
+                    The components of PyTDC include:
+                    <ul>
+                        <li><strong>API-first dataset model</strong>: A collection of multimodal, continually updated heterogeneous data sources is unified under the introduced "API-first-dataset" architecture. Inspired by API-first design, this microservice architecture uses the model-view-controller design pattern to enable multimodal data views.</li>
+                        <li><strong>PyTDC Model Server</strong>: PyTDC presents open-source model retrieval and deployment software that streamlines AI inferencing and exposes state-of-the-art, research-ready models and training setups for biomedical representation learning models across modalities.
+                            <ul>
+                                <li><strong>PyTDC Model Hub</strong>: PyTDC provides a <a href="https://huggingface.co/apliko">model hub</a> that serves as a repository for pre-trained models and training setups. The model hub is designed to be extensible, allowing users to add new models and training setups easily.</li>
+                                <li><strong>PyTDC Model Classes</strong>: PyTDC provides a model source code implementations for SoTA biomedical foundation models enabling easy integration of models into existing applications and workflows.</li>
+                                <li><strong>PyTDC Model Server API</strong>: PyTDC provides an interface for retrieving model weights and source code for ease of model deployment</li>
+                                <li><strong>PyTDC Model Benchmarking APIs</strong>: Domain-specific benchmarking modules for evaluating foundation models at downstream therapeutics tasks.</li>
+                                <li><strong>Research-ready (sc)FMs</strong>: Starting with single-cell foundation models, PyTDC presents up-to-date research ready implementations of foundation models for accelerating research workflows</li>
+                            </ul>
+                        </li>
+                        <li><strong>(Py)TDC Datasets and tasks</strong>: Building on <a href="https://tdcommons.ai">Therapeutic Data Commons</a>, PyTDC introduces ML tasks across therapeutics with corresponding datasets and benchmarking modules.
+                            <ul>
+                                <li><strong>ML tasks</strong>: PyTDC provides a collection of ML tasks across therapeutics, including single-instance prediction, multi-instance prediction, and generation tasks.</li>
+                                <li><strong>Datasets</strong>: PyTDC provides a collection of datasets for each ML task, with multiple splits for training, validation, and testing.</li>
+                                <li><strong>Benchmarking modules</strong>: PyTDC provides benchmarking modules for evaluating model performance on each ML task and dataset.</li>
+                                <li><strong>Single-cell therapeutics</strong>: We integrate single-cell analysis with multimodal machine learning in therapeutics via the introduction of contextualized tasks. From perturbation-response prediction to drug-target nomination</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                  </p> 
+                  <p class="is-size-5">
+                    PyTDC is designed to be user-friendly and easy to use, with a focus on providing a seamless experience for researchers and developers. The platform is built on top of popular machine learning libraries such as PyTorch and Hugging Face Transformers, making it easy to integrate into existing workflows.
+                    PyTDC is also designed to be extensible, allowing users to add new models, datasets, and tasks easily. The platform is open-source and available on GitHub, making it easy for researchers and developers to contribute to the project and share their work with the community.
+                    PyTDC is a powerful tool for researchers and developers working in the field of biomedical AI. With its focus on multimodal data, user-friendly interface, and extensibility, PyTDC is poised to become a leading platform for machine learning in therapeutics.
+                  </p>
+                  <p>
+                    Below is example code for running a standard inference workflow using PyTDC. The example uses the <a href="https://huggingface.co/apliko/Geneformer"><code>Geneformer</code></a> model . The example uses the <a href="/multi_pred_tasks/counterfactual#scperturb"><code>scperturb_drug_AissaBenevolenskaya2021</code></a> dataset, which contains single-cell RNA-seq data from a perturbation experiment. This workflow would involve 1000s of lines of code in other libraries. PyTDC provides a streamlined interface for loading the dataset, tokenizing the data, and running inference with the model.
+                    and multiple tedious steps. Here the workflow is implemented in less than 30 lines of code, and extracts the hidden states of the model, allowing for further analysis or downstream tasks.
+
+                    <pre><code class="language-python">
+from tdc_ml.multi_pred.perturboutcome import PerturbOutcome
+from tdc_ml import tdc_hf_interface
+import torch
+
+dataset = "scperturb_drug_AissaBenevolenskaya2021"
+data = PerturbOutcome(dataset) # import dataset for chemical perturbation response prediction
+adata = data.adata
+tokenizer = GeneformerTokenizer(max_input_size=3) # initialize model tokenizer
+adata.var["feature_id"] = adata.var.index.map(
+    lambda x: tokenizer.gene_name_id_dict.get(x, 0)) # format features using tokenizer data processing functions
+x = tokenizer.tokenize_cell_vectors(adata, ensembl_id="feature_id", ncounts="counts") # tokenize custom dataset
+cells, _ = x
+geneformer = tdc_hf_interface("Geneformer")
+model = geneformer.load() # load the Geneformer model
+input_tensor = torch.tensor(cells)
+# note you'd typically batch the input tensor
+attention_mask = torch.tensor([[t != 0 for t in cell] for cell in batch])
+model(batch,
+    attention_mask=attention_mask,
+    output_hidden_states=True)
+                      </code></pre>
+                  </p>
+                  <p class="is-size-5">
+                    We present PyTDC, a machine-learning platform providing streamlined training, evaluation, and inference software for single-cell biological foundation models to accelerate research in transfer learning method development in therapeutics. PyTDC introduces an API-first architecture that unifies heterogeneous, continuously updated data sources. The platform introduces a model server, which provides unified access to model weights across distributed repositories and standardized inference endpoints. The model server accelerates research workflows by exposing state-of-the-art, research-ready models and training setups for biomedical representation learning models across modalities. Building upon Therapeutic Data Commons, we present single-cell therapeutics tasks, datasets, and benchmarks for model development and evaluation. 
+                  </p>
+                  <div class="has-text-centered">
+                    <img src="{{ url_for('static', filename='images/pytdc_architecture.png') }}" alt="PyTDC Architecture" class="img-responsive" />
+                    <div class="has-text-centered">
+                        <p class="is-size-5">
+                            Figure 2. AI inferencing and model evaluation components. The PyTDC model server (sections 3.2 and C) streamlines retrieval,
+    inferencing, and training setup for an array of context-aware biological foundation models and models spanning multiple modalities. A
+    model store retrieval API provides unified access to model weights stored in the <a href="https://huggingface.co/apliko">Hugging Face Model Hub</a>,
+    Chan-Zuckerberg CELLxGENE Census fine-tuned models, and TDC (Huang et al., 2021; 2022; Velez-Arce et al., 2024) storage. The
+    model server also provides access to model classes, tokenizer functions, and inference endpoints supporting PyTorch (Paszke et al.,
+    2019) and Hugging Face Transformers (Wolf et al., 2020). Extracted embeddings, from either model server inference or pre-computed
+    embedding storage, are ready for downstream use by task-specific benchmarking modules.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 <h2 id="tiered-design-of-therapeutics-data-commons-problem--ml-task--dataset">Tiered Design of Therapeutics Data Commons: “Problem – ML Task – Dataset”</h2>
 
 <div class="container">
