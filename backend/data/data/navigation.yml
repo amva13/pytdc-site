@@ -2,6 +2,13 @@
   link: /
 - name: Start
   link: /start/
+- name: Models
+  link: /models/
+  dropdown:
+    - name: Overview
+      link: /models/
+    - name: Single-cell Foundation Models
+      link: /models/scFMs
 - name: Datasets
   link: /overview/
   dropdown:
@@ -63,3 +70,5 @@
       link: https://github.com/apliko-xyz/PyTDC
 - name: Roadmap 
   link: /pytdc/
+- name: Blog (Coming Soon)
+  link: /paper

@@ -1,0 +1,65 @@
+{% extends "index_template.html" %}
+{% block content %}
+<div class="content">
+    <h1 id="introduction">Overview of PyTDC Model Server</h1>
+
+      <div class="has-text-centered">
+        <img src="{{ url_for('static', filename='images/pytdc_architecture.png') }}" alt="PyTDC Architecture" class="img-responsive" />
+        <div class="has-text-centered">
+            <p class="is-size-5">
+                Figure 2. AI inferencing and model evaluation components. The PyTDC model server (sections 3.2 and C) streamlines retrieval,
+inferencing, and training setup for an array of context-aware biological foundation models and models spanning multiple modalities. A
+model store retrieval API provides unified access to model weights stored in the <a href="https://huggingface.co/apliko">Hugging Face Model Hub</a>,
+Chan-Zuckerberg CELLxGENE Census fine-tuned models, and TDC (Huang et al., 2021; 2022; Velez-Arce et al., 2024) storage. The
+model server also provides access to model classes, tokenizer functions, and inference endpoints supporting PyTorch (Paszke et al.,
+2019) and Hugging Face Transformers (Wolf et al., 2020). Extracted embeddings, from either model server inference or pre-computed
+embedding storage, are ready for downstream use by task-specific benchmarking modules.
+            </p>
+        </div>
+    </div>
+    <div class="has-text-centered">
+        <img src="{{ url_for('static', filename='images/pytdc_workflow.png') }}" alt="PyTDC Architecture" class="img-responsive" />
+        <div class="has-text-centered">
+            <p class="is-size-5">
+                We present PyTDC, a machine-learning platform providing streamlined training, evaluation, and inference software for single-cell biological foundation models to accelerate research in transfer learning method development in therapeutics. PyTDC introduces an API-first architecture that unifies heterogeneous, continuously updated data sources. The platform introduces a model server, which provides unified access to model weights across distributed repositories and standardized inference endpoints. The model server accelerates research workflows by exposing state-of-the-art, research-ready models and training setups for biomedical representation learning models across modalities. Building upon Therapeutic Data Commons, we present single-cell therapeutics tasks, datasets, and benchmarks for model development and evaluation. 
+            </p>
+        </div>
+    </div>
+
+<aside class="menu">
+    <p class="menu-label">Model Server Models Overview</h1>
+    <p>Here you can find an overview of all the models available in the system.</p>
+    <ul>
+    {% for item in models %}
+    <li>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>{{ item.group }}</th>
+                <th>{{ item.name }}</th>
+                <th>{{ item.description }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ul>
+            {% for model in item.models %}
+            <li>
+            <tr>
+                <td>{{ model.name }}</td>
+                <td>{{ model.description }}</td>
+                <td>
+                    <a href="/models/{{models.group}}/{{model.name}}" class="btn btn-info">View Details</a>
+                    <a href="{{ model.link }}" class="btn btn-warning">Huggingface Model Hub</a>
+                </td>
+            </tr>
+            </li>
+            {% endfor %}
+            </ul>
+        </tbody>
+    </table>
+    </li>
+    {% endfor %}
+    </ul>
+</div>
+</div>
+{% endblock %}

@@ -3,6 +3,7 @@ import backend.task_datasets as data
 from backend.metadata.publications import _PUBLICATIONS as publications
 from backend.data.loader.navigation import get_navigation_data
 from backend.data.loader.content import get_callouts_data, get_team_data
+from backend.data.loader.models import get_models_data
 import benchmark.groups as benchmark_groups
 import benchmark.leaderboards as benchmark_leaderboards
 
@@ -16,6 +17,7 @@ api = Api(app)
 navigation_data = get_navigation_data()
 callouts_data = get_callouts_data()
 team_data = get_team_data()
+models_data = get_models_data()
 
 class TDCRequest(dict):
 
@@ -369,6 +371,10 @@ def favicon():
 def next_static_files(filename):
     return send_from_directory("static/_next/static", filename)
 
+@app.route("/paper")
+def paper():
+    return send_from_directory('static/pdfs', "pytdc_icml_final_arxiv.pdf", as_attachment=True)
+
 
 class TDC2Homepage(Resource):
 
@@ -389,10 +395,23 @@ class LegacyHome(Resource):
         }
         args = TDCRequest(**args)
         return make_response(render_template("/index_template.html", **args), 200, {'Content-Type': 'text/html'})
+
+class ModelsOverview(Resource):
+    def get(self):
+        args = {
+            "navbar": navigation_data,
+            "current_url": request.path,
+            "title": "PyTDC: A Community Platform for AI-driven Drug Discovery and Development",
+            "description": "PyTDC is a community platform for AI-driven drug discovery and development that provides a comprehensive overview of the field, including models, datasets, and tasks.",
+            "endpt": "",
+            "models": models_data,
+        }
+        args = TDCRequest(**args)
+        return make_response(render_template("/models/overview.html", **args), 200, {'Content-Type': 'text/html'})
     
 api.add_resource(TDC2Homepage, "/pytdc")
 api.add_resource(LegacyHome, "/home")
-    
+api.add_resource(ModelsOverview, "/models")
 
 if __name__ == '__main__':
     app.run() 

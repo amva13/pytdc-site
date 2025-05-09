@@ -1,0 +1,17 @@
+- group: scFMs
+  name: Single-cell Foundation Models
+  description: |
+    Single-cell foundation models (scFMs) are a new class of models that leverage the power of foundation models to analyze and interpret single-cell data. They are designed to capture the complex relationships and interactions within single-cell datasets, enabling researchers to gain deeper insights into cellular heterogeneity, cell type identification, and functional characterization.
+  models:
+    - name: scGPT
+      description: |
+        scGPT is a generative pre-trained transformer model specifically designed for single-cell RNA sequencing (scRNA-seq) data. It leverages the power of transformer architectures to capture the intricate relationships between genes and cells, enabling accurate cell type identification, differential expression analysis, and trajectory inference.
+      link: https://huggingface.co/apliko/scGPT
+    - name: Geneformer
+      description: |
+        Geneformer is a foundational transformer model pretrained on a large-scale corpus of single cell transcriptomes to enable context-aware predictions in settings with limited data in network biology.
+      link: https://huggingface.co/apliko/Geneformer
+    - name: scVI
+      description: |
+        Single-cell variational inference (scVI) is a powerful tool for the probabilistic analysis of single-cell transcriptomics data. It uses deep generative models to address technical noise and batch effects, providing a robust framework for various downstream analysis tasks. To load the pre-trained model, use the Files and Versions tab files.
+      link: https://huggingface.co/apliko/scVI 
